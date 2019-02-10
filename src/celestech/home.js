@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Parallax} from 'react-parallax';
 import Typography from '@material-ui/core/Typography';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import {createMuiTheme} from '@material-ui/core/styles';
@@ -11,18 +10,17 @@ import Button from '@material-ui/core/Button';
 import FlipClock from 'x-react-flipclock';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Collapse from '@material-ui/core/Collapse';
 import Fade from '@material-ui/core/Fade';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
+import Particles from 'react-particles-js';
 
 import pink from '@material-ui/core/colors/pink';
 import indigo from '@material-ui/core/colors/indigo';
 import red from '@material-ui/core/colors/red'
 
-import headerImage from './res/headerbg.jpg';
 import './home.css'
 
 const theme = createMuiTheme({
@@ -97,7 +95,7 @@ class Home extends Component{
 
 					</AppBar>
 				</Fade>
-				<Drawer anchor ="right" open={this.state.openDrawer} onClose={(ev)=>{
+				<Drawer anchor ="bottom" open={this.state.openDrawer} onClose={(ev)=>{
 					this.setState({
 						openDrawer:false
 					})}
@@ -108,22 +106,26 @@ class Home extends Component{
 					{NavList}
 					</div>
 				</Drawer>
+					<Particles height={(this.state.height-100)+'px'} style={{position:'fixed'}}
+						params= {{
+							"interactivity":{
+								"events":{
+									"onhover":{
+										"enable":true,
+										"mode": "repulse"
+									}
+								}
+							}
+						}}
+					/>
 
-			
-				<Parallax
-					blur = {{min:-15,max:15}}
-					bgImage = {headerImage}
-					bgImageAlt = "Background"
-					strength = {400}
-				>
-					<div className = "headDiv" style = {{height:(this.state.height-100)+"px",display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'center',flexWrap:'wrap'}} >
 
+					<div className = "headDiv" style = {{backgroundColor:'black',height:(this.state.height-100)+"px",display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'center',flexWrap:'wrap'}} >
 
 						<Typography
 							className="titleText"
 							align = 'center'
-							style = {{color:'#FFF',margin:'20px',fontFamily:'inHuman'}}
-							variant = 'h2'
+							style = {{color:'#FFF',margin:'20px',fontFamily:'inHuman',fontSize:"4em"}}
 						>
 							Celestech
 							<Waypoint
@@ -160,8 +162,7 @@ class Home extends Component{
 					</Card>
 
 				
-				</Parallax>
-				<div style = {{height: this.state.height}}>
+				<div style = {{height: this.state.height, backgroundColor:"#0000"}}>
 
 				</div>
 			</MuiThemeProvider>
