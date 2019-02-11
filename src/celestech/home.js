@@ -124,54 +124,10 @@ class Home extends Component{
 					</ListItem>))}
 			</List>
 
-			)
+		)
 
 		return(
-			<MuiThemeProvider muiTheme  = {theme}>
-				<Fade in={this.state.showAppBar} timeout={700}>
-				<AppBar position='fixed' style= {{backgroundColor:'#FFF'}}>
-					<Toolbar>
-						<Typography variant='title' style= {{flexGrow:1, fontFamily:"inHuman",fontSize:"2em"}}>
-							CelesTech
-						</Typography>
-						<IconButton style={{margin:10}} onClick={()=>{
-							this.setState({
-								openDrawer:true
-							})
-						}} >
-							<MenuIcon/>
-						</IconButton>
-					</Toolbar>
-
-					</AppBar>
-				</Fade>
-				<Drawer anchor ="bottom" open={this.state.openDrawer} onClose={(ev)=>{
-					this.setState({
-						openDrawer:false
-					})}
-				}>	
-					<div
-						tabIndex = {0}
-						>
-					{NavList}
-					</div>
-				</Drawer>
-					<Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
-						params= {{
-							"particles":{
-
-							},
-							"interactivity":{
-								"events":{
-									"onhover":{
-										"enable":true,
-										"mode": "repulse"
-									}
-								}
-							}
-						}}
-					/>
-
+			<div>
 
 					<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:this.state.width}} >
 
@@ -299,7 +255,7 @@ class Home extends Component{
 						</Grid>
 					</Paper>
 				</div>
-			</MuiThemeProvider>
+			</div>
 			)
 	}
 
