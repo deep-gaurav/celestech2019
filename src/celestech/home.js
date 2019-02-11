@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import FlipClock from './flipclock';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 import Fade from '@material-ui/core/Fade';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -24,10 +25,11 @@ import Drawer from '@material-ui/core/Drawer';
 import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Dialog from '@material-ui/core/Dialog';
 
 import pink from '@material-ui/core/colors/pink';
 import indigo from '@material-ui/core/colors/indigo';
-import red from '@material-ui/core/colors/red'
+import red from '@material-ui/core/colors/red';
 
 import festImage from './res/fest2018.jpg';
 import quizosityPoster from './res/events/quizosity.jpg';
@@ -113,11 +115,11 @@ class Home extends Component{
 
 	render(){
 
-		let NavItems = ["Home","About","Events","Gallary","Sponsors","Contact"];
+		let NavItems = ["Home","About","Events","Gallery","Sponsors","Contact"];
 		let NavList = (
 			<List>
 				{NavItems.map((text,index)=>(
-					<ListItem button key={text}>
+					<ListItem button key={text} >
 						<ListItemText primary={text}/>
 					</ListItem>))}
 			</List>
@@ -217,7 +219,7 @@ class Home extends Component{
 				<div style = {{ backgroundColor:"#000"}}>
 					<div style={{padding:"20px"}}>
 					<Card elevation={6}>
-						<CardActionArea>
+						<CardActionArea >
 							<CardMedia image={festImage} height="150" style={{width:"100%",objectFit:"none"}} title = "Celestech" component="img"/>
 
 							<CardContent>
@@ -235,7 +237,7 @@ class Home extends Component{
 							</CardContent>
 						</CardActionArea>
 						<CardActions>
-							<Button color="primary">
+							<Button color="primary" >
 								Learn More
 							</Button>
 						</CardActions>
@@ -269,9 +271,24 @@ class Home extends Component{
 									</CardContent>
 								</CardActionArea>
 								<CardActions>
-									<Button color="primary">
+									<Button color="primary" onClick={()=>{console.log("dhfdf");}}>
 										Learn More
 									</Button>
+                                    <Dialog
+                                        fullScreen
+
+                                    >
+                                        <AppBar >
+                                            <Toolbar>
+                                                <IconButton aria-label="Close">
+                                                    <CloseIcon />
+                                                </IconButton>
+                                                <Typography variant="h6" color="inherit">
+                                                    {event.name}
+                                                </Typography>
+                                            </Toolbar>
+                                        </AppBar>
+                                    </Dialog>
 									<Button color="secondary">
 										Register
 									</Button>
