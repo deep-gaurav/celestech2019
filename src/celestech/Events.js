@@ -10,7 +10,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardHeader from '@material-ui/core/CardHeader';
 import Waypoint from 'react-waypoint';
 import Button from '@material-ui/core/Button';
 import FlipClock from './flipclock';
@@ -26,6 +25,9 @@ import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
+import {Transition, Slide} from '@material-ui/core';
+
+import AccessTime from '@material-ui/icons/AccessTime'
 
 import quizosityPoster from './res/events/quizosity.jpg';
 import codathonPoster from './res/events/codathon.jpg';
@@ -36,38 +38,69 @@ import itTambolaPoster from './res/events/it_tambola.jpg';
 
 class Events extends Component{
 
-    events = [
-		{
-			'poster':quizosityPoster,
-			'name':'Quizosity',
-			'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED.."
-		},
-		{
-			'poster':codathonPoster,
-			'name':'Codathon',
-			'shortDescription':'Placeholder text to be changed later. Codathon is a coding competition event....... Some lorem ipsum to be replaced...'
-		},
-		{
-			'poster':treasureHuntPoster,
-			'name':'Treasure Hunt',
-			'shortDescription':'Placeholder text to be changed later. Treasure Hunt is a finding competition... ....... Some lorem ipsum to be replaced...'
-		},
-				{
-			'poster':itTambolaPoster,
-			'name':'IT Tambola',
-			'shortDescription':"Placeholder text to be changed later. IT Tambola is a number game. , .... TO BE REPLACED.."
-		},
-		{
-			'poster':junkyardPoster,
-			'name':'Junkyard Wars',
-			'shortDescription':'Placeholder text to be changed later. junkyardWars is a junkyard scrap building competition....... Some lorem ipsum to be replaced...'
-		},
-		{
-			'poster':uniconPoster,
-			'name':'Unicon',
-			'shortDescription':'Placeholder text to be changed later. Unicon is a gaming event ... ....... Some lorem ipsum to be replaced...'
-		}
-	]
+    constructor(props){
+        super(props);
+        this.state={
+            'events': [
+                {
+                    'poster':quizosityPoster,
+                    'name':'Quizosity',
+                    'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED..",
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
+                {
+                    'poster':codathonPoster,
+                    'name':'Codathon',
+                    'shortDescription':'Placeholder text to be changed later. Codathon is a coding competition event....... Some lorem ipsum to be replaced...',
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
+                {
+                    'poster':treasureHuntPoster,
+                    'name':'Treasure Hunt',
+                    'shortDescription':'Placeholder text to be changed later. Treasure Hunt is a finding competition... ....... Some lorem ipsum to be replaced...',
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
+                {
+                    'poster':itTambolaPoster,
+                    'name':'IT Tambola',
+                    'shortDescription':"Placeholder text to be changed later. IT Tambola is a number game. , .... TO BE REPLACED..",
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
+                {
+                    'poster':junkyardPoster,
+                    'name':'Junkyard Wars',
+                    'shortDescription':'Placeholder text to be changed later. junkyardWars is a junkyard scrap building competition....... Some lorem ipsum to be replaced...',
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
+                {
+                    'poster':uniconPoster,
+                    'name':'Unicon',
+                    'shortDescription':'Placeholder text to be changed later. Unicon is a gaming event ... ....... Some lorem ipsum to be replaced...',
+                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                }
+            ]
+        }
+    }
+
+
 
 
     render()
@@ -86,10 +119,16 @@ class Events extends Component{
 							EVENTS
 						</Typography>
 						<Grid container spacing={16} justify="center">
-						{this.events.map((event,index)=>(
+						{this.state.events.map((event,index)=>(
 							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
 							<Card evevation={8} >
-								<CardActionArea>
+								<CardActionArea onClick={()=>{
+                                        event.open=true;
+                                        this.state.events[index]=event;
+                                        this.setState(
+                                            this.state
+                                        )
+                                    }}>
 									<CardMedia image={event.poster} height="150" style={{width:"100%",objectFit:"none"}} title = {event.name} component="img"/>
 
 									<CardContent>
@@ -105,16 +144,37 @@ class Events extends Component{
 									</CardContent>
 								</CardActionArea>
 								<CardActions>
-									<Button color="primary" onClick={()=>{console.log("dhfdf");}}>
+									<Button color="primary" onClick={()=>{
+                                        event.open=true;
+                                        this.state.events[index]=event;
+                                        this.setState(
+                                            this.state
+                                        )
+                                    }}>
 										Learn More
 									</Button>
                                     <Dialog
                                         fullScreen
-
+                                        open={event.open}
+                                        
+                                        onClose={()=>{
+                                            event.open=false;
+                                            this.state.events[index]=event;
+                                            this.setState(
+                                                this.state
+                                            )
+                                        }}
+                                        scroll='body'
                                     >
-                                        <AppBar >
+                                        <AppBar position="fixed" >
                                             <Toolbar>
-                                                <IconButton aria-label="Close">
+                                                <IconButton aria-label="Close" onClick={()=>{
+                                                        event.open=false;
+                                                        this.state.events[index]=event;
+                                                        this.setState(
+                                                            this.state
+                                                        )
+                                                    }}>
                                                     <CloseIcon />
                                                 </IconButton>
                                                 <Typography variant="h6" color="inherit">
@@ -122,6 +182,47 @@ class Events extends Component{
                                                 </Typography>
                                             </Toolbar>
                                         </AppBar>
+                                        <Grid container alignItems='flex-start' justify='center' style={{marginTop:"4em"}} spacing={12}>
+                                            <Grid item>
+                                            <Paper style={{margin:"10px"}}>
+                                                <CardContent>
+                                                    <img style={{display:"block",maxWidth:"100%"}} src={event.poster}/>
+                                                </CardContent>
+                                            </Paper>
+                                            </Grid>
+                                            <Grid item sm={4}>
+                                                <Card style={{ margin:"10px"}}>
+                                                    <CardContent>
+                                                        <Grid container alignItems="center" justify="space-between" >
+                                                        <Grid item>
+                                                            <Typography
+                                                                variant='h5'
+                                                            >
+                                                                {event.name}
+                                                            </Typography>
+
+                                                            <Typography variant="subheading" align="center">
+                                                                <AccessTime/>    {event.schedule}
+                                                            
+                                                            </Typography>
+                                                        </Grid>
+                                                        <Grid item>
+
+                                                            <Button variant="raised" color="primary">
+                                                                Register
+                                                                </Button>
+                                                        </Grid>
+                                                        </Grid>
+                                                        <Typography variant="body1">
+                                                        {event.longDescription}
+                                                        </Typography>
+                                                        
+                                                    </CardContent>
+                                                </Card>
+
+                                            </Grid>
+                                        </Grid>
+                                        
                                     </Dialog>
 									<Button color="secondary">
 										Register
