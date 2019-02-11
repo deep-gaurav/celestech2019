@@ -137,7 +137,9 @@ class Header extends Component{
                 <Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
                            params= {{
                                "particles":{
-
+                                    "number":{
+                                        "value":this.state.width/15
+                                    }
                                },
                                "interactivity":{
                                    "events":{

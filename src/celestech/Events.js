@@ -170,7 +170,7 @@ class Events extends Component{
                                     >
                                         <AppBar position="fixed" >
                                             <Toolbar>
-                                                <IconButton aria-label="Close" onClick={()=>{
+                                                <IconButton color="inherit" aria-label="Close" onClick={()=>{
                                                         event.open=false;
                                                         this.state.events[index]=event;
                                                         this.setState(
@@ -182,7 +182,7 @@ class Events extends Component{
                                                 <Typography style={{flexGrow:1}} variant="h6" color="inherit">
                                                     {event.name}
                                                 </Typography>
-                                                {index!=0 && <IconButton onClick={()=>{
+                                                {index!=0 && <IconButton color="inherit" onClick={()=>{
                                                         event.open=false;
                                                         this.state.events[index-1].open=true;
                                                         this.setState(
@@ -192,7 +192,7 @@ class Events extends Component{
                                                     <NavigateBefore/>
                                                 </IconButton>
                                                 }
-                                                {index!=this.state.events.length-1 && <IconButton onClick={()=>{
+                                                {index!=this.state.events.length-1 && <IconButton color="inherit" onClick={()=>{
                                                         event.open=false;
                                                         this.state.events[index+1].open=true;
                                                         this.setState(
