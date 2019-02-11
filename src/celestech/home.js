@@ -171,11 +171,11 @@ class Home extends Component{
 					/>
 
 
-					<div style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:this.state.width}} >
+					<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:this.state.width}} >
 
 							<div>
-						<Typography
-							className="titleText"
+						<p
+
 							align = 'center'
 							style = {{color:'#FFF',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
 						>
@@ -194,22 +194,22 @@ class Home extends Component{
 
 							/>
 							
-						</Typography>
+						</p>
 							</div>
 
-							<Typography style={{color:"#FFF", fontSize:"2vw"}} align="center" gutterBottom>
+							<Typography style={{color:"#FFF", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
 								Department of Computer Science
 							</Typography>
 
 
 						<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
-							<Typography style={{fontSize:"20px",padding:"5px"}} align="center" color="secondary">
+							<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
 								Register
 							</Typography>
 						</Button>
 
 
-					</div>
+					</Grid>
 					<FlipClock
 						count_to = "2019-02-27 00:00:00"
 					/>
