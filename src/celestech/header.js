@@ -20,12 +20,13 @@ import CloseIcon from '@material-ui/icons/Close';
 import Fade from '@material-ui/core/Fade';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
 import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
+import {Link} from 'react-router-dom';
+import { ListItemText } from '@material-ui/core';
 
 class Header extends Component{
     constructor(props){
@@ -58,12 +59,44 @@ class Header extends Component{
     }
     render(){
 
-        let NavItems = ["Home","About","Events","Gallery","Sponsors","Contact"];
+        let NavItems = [
+            {
+                "name":"Home",
+                "path":"/",
+                "icon":"",
+            },
+            {
+                "name":"Events",
+                "path":"/events",
+                "icon":""
+            },
+            {
+                "name":"About",
+                "path":"/about",
+                "icon":""
+            },
+            {
+                "name":"Gallery",
+                "path":"/gallery",
+                "icon":""
+            },
+            {
+                "name":"Sponsors",
+                "path":"/sponsor",
+                "icon":""
+            },
+            {
+                "name":"Contact",
+                "path":"/contact",
+                "icon":""
+            }
+        ];
         let NavList = (
             <List>
-                {NavItems.map((text,index)=>(
-                    <ListItem button key={text} >
-                        <ListItemText primary={text}/>
+                {NavItems.map((menuItem,index)=>(
+                    <ListItem button key={menuItem.name} component={Link} to={menuItem.path}>
+                            <ListItemText primary={menuItem.name}/>
+                        
                     </ListItem>))}
             </List>
 

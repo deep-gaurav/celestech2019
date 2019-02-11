@@ -31,13 +31,9 @@ import pink from '@material-ui/core/colors/pink';
 import indigo from '@material-ui/core/colors/indigo';
 import red from '@material-ui/core/colors/red';
 
+import Events from './Events';
+
 import festImage from './res/fest2018.jpg';
-import quizosityPoster from './res/events/quizosity.jpg';
-import codathonPoster from './res/events/codathon.jpg';
-import junkyardPoster from './res/events/junkyardWars.jpg';
-import treasureHuntPoster from './res/events/treasureHunt.jpg';
-import uniconPoster from './res/events/unicon.jpg';
-import itTambolaPoster from './res/events/it_tambola.jpg';
 //import './home.scss';
 
 const theme = createMuiTheme({
@@ -51,38 +47,6 @@ const theme = createMuiTheme({
 
 class Home extends Component{
 
-	events = [
-		{
-			'poster':quizosityPoster,
-			'name':'Quizosity',
-			'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED.."
-		},
-		{
-			'poster':codathonPoster,
-			'name':'Codathon',
-			'shortDescription':'Placeholder text to be changed later. Codathon is a coding competition event....... Some lorem ipsum to be replaced...'
-		},
-		{
-			'poster':treasureHuntPoster,
-			'name':'Treasure Hunt',
-			'shortDescription':'Placeholder text to be changed later. Treasure Hunt is a finding competition... ....... Some lorem ipsum to be replaced...'
-		},
-				{
-			'poster':itTambolaPoster,
-			'name':'IT Tambola',
-			'shortDescription':"Placeholder text to be changed later. IT Tambola is a number game. , .... TO BE REPLACED.."
-		},
-		{
-			'poster':junkyardPoster,
-			'name':'Junkyard Wars',
-			'shortDescription':'Placeholder text to be changed later. junkyardWars is a junkyard scrap building competition....... Some lorem ipsum to be replaced...'
-		},
-		{
-			'poster':uniconPoster,
-			'name':'Unicon',
-			'shortDescription':'Placeholder text to be changed later. Unicon is a gaming event ... ....... Some lorem ipsum to be replaced...'
-		}
-	]
 
 	constructor(props){
 		super(props);
@@ -128,49 +92,49 @@ class Home extends Component{
 
 		return(
 			<div>
+					
+				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:"100%"}} >
 
-					<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:this.state.width}} >
+						<div>
+					<p
 
-							<div>
-						<p
+						align = 'center'
+						style = {{color:'#FFF',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
+					>
+						Celestech
+						<Waypoint
+							onEnter = {({previousPosition,currentPosition,event})=>{
+								this.setState({
+									showAppBar:false	
+								});
+							}}
+							onLeave = {({previousPosition,currentPosition,event})=>{
+								this.setState({
+									showAppBar:true	
+								});
+							}}
 
-							align = 'center'
-							style = {{color:'#FFF',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
-						>
-							Celestech
-							<Waypoint
-								onEnter = {({previousPosition,currentPosition,event})=>{
-									this.setState({
-										showAppBar:false	
-									});
-								}}
-								onLeave = {({previousPosition,currentPosition,event})=>{
-									this.setState({
-										showAppBar:true	
-									});
-								}}
+						/>
+						
+					</p>
+						</div>
 
-							/>
-							
-						</p>
-							</div>
-
-							<Typography style={{color:"#FFF", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
-								Department of Computer Science
-							</Typography>
-
-
-						<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
-							<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
-								Register
-							</Typography>
-						</Button>
+						<Typography style={{color:"#FFF", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
+							Department of Computer Science
+						</Typography>
 
 
-					</Grid>
-					<FlipClock
-						count_to = "2019-02-27 00:00:00"
-					/>
+					<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
+						<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
+							Register
+						</Typography>
+					</Button>
+
+
+				</Grid>
+				<FlipClock
+					count_to = "2019-02-27 00:00:00"
+				/>
 
 				<div style = {{ backgroundColor:"#000"}}>
 					<div style={{padding:"20px"}}>
@@ -198,63 +162,14 @@ class Home extends Component{
 							</Button>
 						</CardActions>
 					</Card>
+
+
 					</div>
-					<Paper style = {{margin:"10px"}}>
-						<Typography
-							variant = "display1"
-							align = "center"
-							gutterBottom
-						>
-							EVENTS
-						</Typography>
-						<Grid container spacing={16} justify="center">
-						{this.events.map((event,index)=>(
-							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
-							<Card evevation={8} >
-								<CardActionArea>
-									<CardMedia image={event.poster} height="150" style={{width:"100%",objectFit:"none"}} title = {event.name} component="img"/>
-
-									<CardContent>
-										<Typography
-											variant="title"
-											gutterBottom
-										>
-											{event.name}
-										</Typography>
-										<Typography variant="p">
-											{event.shortDescription}
-										</Typography>
-									</CardContent>
-								</CardActionArea>
-								<CardActions>
-									<Button color="primary" onClick={()=>{console.log("dhfdf");}}>
-										Learn More
-									</Button>
-                                    <Dialog
-                                        fullScreen
-
-                                    >
-                                        <AppBar >
-                                            <Toolbar>
-                                                <IconButton aria-label="Close">
-                                                    <CloseIcon />
-                                                </IconButton>
-                                                <Typography variant="h6" color="inherit">
-                                                    {event.name}
-                                                </Typography>
-                                            </Toolbar>
-                                        </AppBar>
-                                    </Dialog>
-									<Button color="secondary">
-										Register
-									</Button>
-								</CardActions>
-							</Card>
-							</Grid>
-							))}
-						</Grid>
-					</Paper>
+					
 				</div>
+
+				<Events/>
+
 			</div>
 			)
 	}
