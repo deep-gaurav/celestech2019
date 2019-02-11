@@ -27,7 +27,9 @@ import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
 import {Transition, Slide} from '@material-ui/core';
 
-import AccessTime from '@material-ui/icons/AccessTime'
+import AccessTime from '@material-ui/icons/AccessTime';
+import NavigateNext from '@material-ui/icons/NavigateNext';
+import NavigateBefore from '@material-ui/icons/NavigateBefore';
 
 import quizosityPoster from './res/events/quizosity.jpg';
 import codathonPoster from './res/events/codathon.jpg';
@@ -177,9 +179,29 @@ class Events extends Component{
                                                     }}>
                                                     <CloseIcon />
                                                 </IconButton>
-                                                <Typography variant="h6" color="inherit">
+                                                <Typography style={{flexGrow:1}} variant="h6" color="inherit">
                                                     {event.name}
                                                 </Typography>
+                                                {index!=0 && <IconButton onClick={()=>{
+                                                        event.open=false;
+                                                        this.state.events[index-1].open=true;
+                                                        this.setState(
+                                                            this.state
+                                                        )
+                                                    }}>
+                                                    <NavigateBefore/>
+                                                </IconButton>
+                                                }
+                                                {index!=this.state.events.length-1 && <IconButton onClick={()=>{
+                                                        event.open=false;
+                                                        this.state.events[index+1].open=true;
+                                                        this.setState(
+                                                            this.state
+                                                        )
+                                                    }}>
+                                                    <NavigateNext/>
+                                                </IconButton>
+                                                }
                                             </Toolbar>
                                         </AppBar>
                                         <Grid container alignItems='flex-start' justify='center' style={{marginTop:"4em"}} spacing={12}>
@@ -213,6 +235,7 @@ class Events extends Component{
                                                                 </Button>
                                                         </Grid>
                                                         </Grid>
+                                                        <Divider/>
                                                         <Typography variant="body1">
                                                         {event.longDescription}
                                                         </Typography>
