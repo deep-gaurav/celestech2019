@@ -26,7 +26,11 @@ import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
 import {Link} from 'react-router-dom';
-import { ListItemText } from '@material-ui/core';
+import { ListItemText, SvgIcon } from '@material-ui/core';
+import {SpeedDial,SpeedDialAction,SpeedDialIcon} from '@material-ui/lab';
+import Share from '@material-ui/icons/Share';
+import CameraEnhance from '@material-ui/icons/CameraEnhance';
+import { grey } from '@material-ui/core/colors';
 
 class Header extends Component{
     constructor(props){
@@ -37,6 +41,7 @@ class Header extends Component{
 
             showAppBar:false,
             openDrawer:false,
+            openSpeedDial:false,
         }
     }
 
@@ -134,6 +139,58 @@ class Header extends Component{
                         {NavList}
                     </div>
                 </Drawer>
+                <div style={{position:"absolute",height:this.state.height,width:"100%"}}>
+                    <MuiThemeProvider theme={createMuiTheme({"palette":{"primary":grey}})}>
+                    <SpeedDial 
+                        ariaLabel="Social"
+                        
+                        icon= {<SpeedDialIcon color="secondary" icon={<Share/>} openIcon={<CloseIcon/>} />}
+                        direction= 'left'
+                        style = {{
+                            position:"fixed",
+                            bottom:"50%",
+                            right:"-20px"
+                        }}
+                        open={this.state.openSpeedDial}
+                        onMouseEnter={()=>{
+                            this.setState(
+                                {
+                                    openSpeedDial:true
+                                }
+                            )
+                        }}
+                        onMouseLeave={()=>{
+                            this.setState(
+                                {
+                                    openSpeedDial:false
+                                }
+                            )
+                        }}
+                        onClose={()=>{
+                            this.setState(
+                                {
+                                    openSpeedDial:false
+                                }
+                            )
+                        }}
+                    >
+                        <SpeedDialAction
+                            key="facebook"
+                            icon={<SvgIcon >    <path fill="#000000" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" /></SvgIcon>}
+                            tooltipOpen
+                            tooltipTitle="Facebook"
+                            tooltipPlacement="top"
+                        />
+                        <SpeedDialAction
+                            key="instagram"
+                            icon={<CameraEnhance/>}
+                            tooltipOpen
+                            tooltipTitle="Instagram"
+                            tooltipPlacement="top"
+                        />    
+                    </SpeedDial>
+                    </MuiThemeProvider>
+                </div>
                 <Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
                            params= {{
                                "particles":{
