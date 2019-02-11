@@ -8,6 +8,7 @@
     "@material-ui/styles": "^3.0.0-alpha.10",
     "@material-ui/system": "^3.0.0-alpha.2",
     "@mvpleung/flipclock": "0.0.6",
+    "fork-ts-checker-webpack-plugin": "^0.5.2",
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
     "react-center": "^1.1.1",

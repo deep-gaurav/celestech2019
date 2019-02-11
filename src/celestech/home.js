@@ -129,7 +129,7 @@ class Home extends Component{
 				<Fade in={this.state.showAppBar} timeout={700}>
 				<AppBar position='fixed' style= {{backgroundColor:'#FFF'}}>
 					<Toolbar>
-						<Typography variant='title' style= {{flexGrow:1}}>
+						<Typography variant='title' style= {{flexGrow:1, fontFamily:"inHuman",fontSize:"2em"}}>
 							CelesTech
 						</Typography>
 						<IconButton style={{margin:10}} onClick={()=>{
@@ -156,6 +156,9 @@ class Home extends Component{
 				</Drawer>
 					<Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
 						params= {{
+							"particles":{
+
+							},
 							"interactivity":{
 								"events":{
 									"onhover":{
@@ -168,12 +171,13 @@ class Home extends Component{
 					/>
 
 
-					<div className = "headDiv" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'center',flexWrap:'wrap'}} >
+					<div style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:this.state.width}} >
 
+							<div>
 						<Typography
 							className="titleText"
 							align = 'center'
-							style = {{color:'#FFF',margin:'20px',fontFamily:'inHuman',fontSize:"20vw"}}
+							style = {{color:'#FFF',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
 						>
 							Celestech
 							<Waypoint
@@ -191,8 +195,17 @@ class Home extends Component{
 							/>
 							
 						</Typography>
-						<Button variant='outlined' color='secondary'>
-							Register
+							</div>
+
+							<Typography style={{color:"#FFF", fontSize:"2vw"}} align="center" gutterBottom>
+								Department of Computer Science
+							</Typography>
+
+
+						<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
+							<Typography style={{fontSize:"20px",padding:"5px"}} align="center" color="secondary">
+								Register
+							</Typography>
 						</Button>
 
 
