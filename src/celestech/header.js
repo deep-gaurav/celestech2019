@@ -107,8 +107,10 @@ class Header extends Component{
                 <Fade in={true} timeout={700}>
                     <AppBar position='fixed' style= {{backgroundColor:'#FFF9'}}>
                         <Toolbar>
-                            <Typography variant='title' style= {{flexGrow:1, fontFamily:"inHuman",fontSize:"2em"}}>
-                                CelesTech
+                            <Typography variant='title' style= {{flexGrow:1}}>
+                                <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"inHuman",fontSize:"2em"}}>
+                                    Celestech
+                                </Button>
                             </Typography>
                             <IconButton style={{margin:10}} onClick={()=>{
                                 this.setState({
