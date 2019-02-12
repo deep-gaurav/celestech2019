@@ -126,13 +126,7 @@ class Events extends Component{
 						{this.state.events.map((event,index)=>(
 							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
 							<Card evevation={8} >
-								<CardActionArea onClick={()=>{
-                                        event.open=true;
-                                        this.state.events[index]=event;
-                                        this.setState(
-                                            this.state
-                                        )
-                                    }}>
+								<CardActionArea >
 									<CardMedia image={event.poster} height="150" style={{width:"100%",objectFit:"none"}} title = {event.name} component="img"/>
 
 									<CardContent>
@@ -170,7 +164,7 @@ class Events extends Component{
                                         }}
                                         scroll='body'
                                     >
-                                        <AppBar position="fixed" >
+                                        <AppBar position="fixed" style={{backgroundColor:"#0007"}} >
                                             <Toolbar>
                                                 <IconButton color="inherit" aria-label="Close" onClick={()=>{
                                                         event.open=false;

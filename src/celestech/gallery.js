@@ -50,6 +50,9 @@ class Gallery extends Component{
                                     </CardActionArea>
                                 </Card>
                                 <Dialog
+                                    fullWidth
+                                    maxWidth={false}
+                                    scroll='body'
                                     open={this.images[imgname]["open"]}
                                     onBackdropClick={
                                         ()=>{
@@ -72,7 +75,7 @@ class Gallery extends Component{
                                         )
                                     }}
                                 >
-                                    <img  src={this.images[imgname]["image"]} />
+                                    <img  src={this.images[imgname]["image"]} style={{display:"block",maxWidth:"100%"}} />
                                 </Dialog>
 
                                 

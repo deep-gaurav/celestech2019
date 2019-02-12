@@ -99,7 +99,13 @@ class Header extends Component{
         let NavList = (
             <List>
                 {NavItems.map((menuItem,index)=>(
-                    <ListItem button key={menuItem.name} component={Link} to={menuItem.path}>
+                    <ListItem button key={menuItem.name} component={Link} onClick={()=>{
+                        this.setState(
+                            {
+                                openDrawer:false
+                            }
+                        )
+                    }} to={menuItem.path}>
                             <ListItemText primary={menuItem.name}/>
                         
                     </ListItem>))}

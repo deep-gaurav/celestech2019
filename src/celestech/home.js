@@ -121,9 +121,13 @@ class Home extends Component{
 
 						<Typography style={{color:"#FFF", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
 							Department of Computer Science
+
+
+						<Typography style={{color:"#FFF", fontSize:"3vmin",marginBottom:"2em"}} align="center" gutterBottom>
+							Aryabhatta College, University of Delhi
 						</Typography>
 
-
+						</Typography>
 					<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
 						<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
 							Register
@@ -167,8 +171,6 @@ class Home extends Component{
 					</div>
 					
 				</div>
-
-				<Events/>
 
 			</div>
 			)
