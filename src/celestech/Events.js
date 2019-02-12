@@ -40,6 +40,8 @@ import itTambolaPoster from './res/events/it_tambola.jpg';
 
 class Events extends Component{
 
+    DateFormat = { weekday: 'long', month: 'long', day: 'numeric' };
+
     constructor(props){
         super(props);
         this.state={
@@ -224,7 +226,7 @@ class Events extends Component{
                                                             </Typography>
 
                                                             <Typography variant="subheading" align="center">
-                                                                <AccessTime/>    {event.schedule}
+                                                                <AccessTime/>    {new Date(event.schedule).toLocaleDateString("en-US",this.DateFormat)}
                                                             
                                                             </Typography>
                                                         </Grid>
