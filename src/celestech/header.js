@@ -179,6 +179,13 @@ class Header extends Component{
                                 }
                             )
                         }}
+                        onClick={()=>{
+                            this.setState(
+                                {
+                                    openSpeedDial:!this.state.openSpeedDial
+                                }
+                            )
+                        }}
                     >
                         <SpeedDialAction
                             key="facebook"
