@@ -16,6 +16,7 @@ import FlipClock from './flipclock';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Fade from '@material-ui/core/Fade';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -25,7 +26,7 @@ import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
-import {Transition, Slide} from '@material-ui/core';
+import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails} from '@material-ui/core';
 
 import AccessTime from '@material-ui/icons/AccessTime';
 import NavigateNext from '@material-ui/icons/NavigateNext';
@@ -46,11 +47,52 @@ class Events extends Component{
         super(props);
         this.state={
             'events': [
+
+                {
+                    'poster':itTambolaPoster,
+                    "name":"IT Tambola",
+                    "slogan":"Shot in the Dark",
+                    'shortDescription':"Tombola is the Italian version of Bingo. However, unlike the American version, where you can make Bingo horizontally, vertically, or diagonally, In Tombola, only horizontally counts.",
+                    "details":[
+                        {
+                            "name":"Format",
+                            "value":<ul>
+                                <li>We will provide tickets to the participants with answers and numbers on the tickets.</li>
+                                <li>Questions will be displayed randomly on the screen.</li>
+                                <li>You have to cross out the correct answers if they are present in the tickets.</li>
+                                    </ul>
+                        },
+                        {
+                            "name":"Rules",
+                            "value":<ul>
+                                <li>Individual Participation.</li>
+                                <li>There will be multiple winners.</li>
+                                <li> No cheating will be entertained.</li>
+                                <li>Volunteers/organizers decision will be the final.</li>
+                                <li>The organizers reserve the right to change the rules as they deem fit.</li>
+                                    </ul>
+                        },
+                        {
+                            "name":"Contact",
+                            "value":<ul>
+                                <li>
+                                    Deepak
+                                </li>
+                            </ul>
+                        }
+                        ],
+                    'schedule':"2019-02-27 10:30:00",
+
+                    'open':false
+                },
                 {
                     'poster':quizosityPoster,
                     'name':'Quizosity',
+                    "slogan":"",
                     'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED..",
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    "format":false,
+                    "rules":false,
+                    "contact":false,
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
@@ -68,15 +110,6 @@ class Events extends Component{
                     'poster':treasureHuntPoster,
                     'name':'Treasure Hunt',
                     'shortDescription':'Placeholder text to be changed later. Treasure Hunt is a finding competition... ....... Some lorem ipsum to be replaced...',
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
-                    'schedule':"2019-02-27 10:30:00",
-
-                    'open':false
-                },
-                {
-                    'poster':itTambolaPoster,
-                    'name':'IT Tambola',
-                    'shortDescription':"Placeholder text to be changed later. IT Tambola is a number game. , .... TO BE REPLACED..",
                     'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
                     'schedule':"2019-02-27 10:30:00",
 
@@ -218,10 +251,13 @@ class Events extends Component{
                                                             >
                                                                 {event.name}
                                                             </Typography>
+                                                            <Typography variant="h6">
+                                                                {event.slogan}
+                                                            </Typography>
 
                                                             <Typography variant="subheading" align="center">
                                                                 <AccessTime/>    {new Date(event.schedule).toLocaleDateString("en-US",this.DateFormat)}
-                                                            
+
                                                             </Typography>
                                                         </Grid>
                                                         <Grid item>
@@ -233,8 +269,24 @@ class Events extends Component{
                                                         </Grid>
                                                         <Divider/>
                                                         <Typography variant="body1">
-                                                        {event.longDescription}
+                                                            {event.shortDescription}
                                                         </Typography>
+                                                        {
+                                                            event.details!=undefined && 
+                                                            event.details.map((detail,index)=>(
+                                                                
+                                                                <ExpansionPanel defaultExpanded>
+                                                                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+                                                                        <Typography variant="title">
+                                                                            {detail.name}
+                                                                        </Typography>
+                                                                    </ExpansionPanelSummary>
+                                                                    <ExpansionPanelDetails>
+                                                                        {detail.value}
+                                                                    </ExpansionPanelDetails>
+                                                                </ExpansionPanel>
+                                                            ))
+                                                        }
                                                         
                                                     </CardContent>
                                                 </Card>
