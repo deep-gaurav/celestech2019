@@ -134,7 +134,7 @@ class Header extends Component{
 
                     </AppBar>
                 </Fade>
-                <Drawer anchor ="bottom" open={this.state.openDrawer} onClose={(ev)=>{
+                <Drawer anchor ="right" open={this.state.openDrawer} onClose={(ev)=>{
                     this.setState({
                         openDrawer:false
                     })}
