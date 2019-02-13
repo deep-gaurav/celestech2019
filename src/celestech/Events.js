@@ -26,7 +26,7 @@ import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
-import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails} from '@material-ui/core';
+import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Grow, Collapse, Zoom} from '@material-ui/core';
 import Blur from 'react-css-blur';
 
 import AccessTime from '@material-ui/icons/AccessTime';
@@ -39,6 +39,7 @@ import junkyardPoster from './res/events/junkyardWars.jpg';
 import treasureHuntPoster from './res/events/treasureHunt.jpg';
 import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
+import { Slider } from '@material-ui/lab';
 
 class Events extends Component{
 
@@ -255,7 +256,7 @@ class Events extends Component{
 										</Typography>
 									</CardContent>
                                     </Blur>
-                                    <Fade in={event.hovering} timeout={400}>
+                                    <Slide direction="down" in={event.hovering} timeout={400}>
                                     <Grid container justify="center" alignItems="center" style={{backgroundColor:"#0008",position:"absolute",left:0,top:0,width:"100%",height:"100%"}}>
                                         <Grid item>
                                             <Button variant="raised">
@@ -263,7 +264,7 @@ class Events extends Component{
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                    </Fade>
+                                    </Slide>
 								</CardActionArea>
 								<CardActions>
 									<Button color="primary" onClick={()=>{
