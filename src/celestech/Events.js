@@ -27,6 +27,7 @@ import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
 import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails} from '@material-ui/core';
+import Blur from 'react-css-blur';
 
 import AccessTime from '@material-ui/icons/AccessTime';
 import NavigateNext from '@material-ui/icons/NavigateNext';
@@ -82,7 +83,7 @@ class Events extends Component{
                         }
                         ],
                     'schedule':"2019-02-27 10:30:00",
-
+                    
                     'open':false
                 },
                 {
@@ -213,7 +214,33 @@ class Events extends Component{
 						{this.state.events.map((event,index)=>(
 							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
 							<Card evevation={8} >
-								<CardActionArea >
+								<CardActionArea onClick={()=>{
+                                        event.open=true;
+                                        this.state.events[index]=event;
+                                        this.setState(
+                                            this.state
+                                        )
+                                    }} 
+                                    
+                                    onMouseEnter={
+                                        (element,mouseevent)=>{
+                                            event.hovering=true;
+                                            this.setState(
+                                                this.state
+                                            )
+                                        }
+                                    }
+                                    onMouseLeave={
+                                        (element,mouseevent)=>{
+                                            event.hovering=false;
+                                            this.setState(
+                                                this.state
+                                            )
+                                        }
+                                    }
+
+                                    >
+                                    <Blur radius={event.hovering?"5px":"0px"} transition="400ms">
 									<CardMedia image={event.poster} height="150" style={{width:"100%",objectFit:"none"}} title = {event.name} component="img"/>
 
 									<CardContent>
@@ -227,6 +254,16 @@ class Events extends Component{
 											{event.shortDescription}
 										</Typography>
 									</CardContent>
+                                    </Blur>
+                                    <Fade in={event.hovering} timeout={400}>
+                                    <Grid container justify="center" alignItems="center" style={{backgroundColor:"#0008",position:"absolute",left:0,top:0,width:"100%",height:"100%"}}>
+                                        <Grid item>
+                                            <Button variant="raised">
+                                                Learn More
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                    </Fade>
 								</CardActionArea>
 								<CardActions>
 									<Button color="primary" onClick={()=>{
