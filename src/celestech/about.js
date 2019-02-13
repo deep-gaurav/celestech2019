@@ -1,36 +1,76 @@
 import React, {Component} from 'react';
-import { Paper, Card, Grid, CardActionArea, CardMedia, CardContent, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import { Paper, Card, Grid, CardMedia, CardContent, Typography} from '@material-ui/core';
 
 import collegeImage from './res/aboutImages/college.jpg';
+import techpioneers from './res/aboutImages/techpio.jpeg';
+import celestech from './res/aboutImages/celes.jpeg';
+import Divider from "@material-ui/core/es/Divider/Divider";
 
 class About extends Component{
 
     detail=[
+
         {
-            "header":"About Aryabhatta College",
+            "header":"ABOUT CELESTECH",
             "detail":<div>
-                <p>ARYABHATTA COLLEGE comes into existence from the academic session 2014-15. It is an institution directly maintained by the University of Delhi. The college was formerly known as Ram Lal Anand College (Evening) and was established in 1973.
+                "Celestech" is the annual fest organised by the Department of Computer Science, Aryabhatta College,
+                University of Delhi. It involves multifarious technical and non-tech events
+                attracting a huge crowd from across different colleges of the Delhi University every year.
+                Celestech is organized with the objective to provide a
+                platform for the students to showcase their talent and skills with a competitive spirit.
+                From amazing events including Codathon, Junkyard Wars, Quizosity, IT Tambola, LAN Gaming
+                and multiple fun-filled games, we are coming back this February. Pen down the dates and get
+                ready for a boisterous experience.
+            </div>,
+            "image":celestech
+        },
+        {
+            "header":"ABOUT TECHPIONEERS ",
+            "detail":<div>
+                The Computer Science Department of
+                Aryabhatta College envisions at familiarizing
+                and training students with the latest
+                technologies in computer science. With this
+                objective, the Computer Science Society,
+                TechPioneers, was established in 2016, with its
+                motto clearly depicted by the tagline
+                ‘Excellence Bit by Bit’. The society serves as a
+                comprehensive platform to bring Aryabhatta
+                College as the pivotal point for activities in
+                computer science and related domains.
+                Since its inception, Techpioneers has been involved in
+                various activities, organizing various
+                seminars and inviting many eminent
+                personalities.
+            </div>,
+            "image":techpioneers
+        },
+        {
+            "header":"ABOUT ARYABHATTA",
+            "detail":<div>
 
-The working hours at the Aryabhatta College are 8:30 a.m. to 5:00 p.m. Classes shall commence at 8:30 a.m.
-
-The College is located adjacent to the South Campus of the University of Delhi in the picturesque surroundings of the South Delhi section of the the Aravali range.
-
-Aryabhatta College is a co-educational institution and conducts Humanities, Arts and Commerce courses at the undergraduate level. There are presently around 2200 students on the rolls of the College.</p>
+                ARYABHATTA COLLEGE is located
+                adjacent to the South Campus of the
+                University of Delhi in the picturesque
+                surroundings of the South Delhi section of
+                the the Aravali range.
+                Aryabhatta College is a recently
+                established college of the University Of
+                Delhi but it has already found its place
+                amongst the oldest and emminent
+                colleges of delhi university having its name
+                mentioned regularly in leading
+                newspapers and media.
+                It has been a birthplace of various
+                fests and events attracting a great crowd
+                from all over the university.
             </div>,
             "image":collegeImage
         },
-        {
-            
-            "header":"About the fest",
-            "detail":"LOTIDHVkjfdhbkjxnb vc",
-            "image":false
-        }
+
     ]
 
     render() {
-
-
-
         return(
             <div style={{padding:"10px",paddingTop:"4em", backgroundColor:"black"}}>
                 <Paper>
@@ -41,12 +81,12 @@ Aryabhatta College is a co-educational institution and conducts Humanities, Arts
                                 <Grid item >
                                     <Card style={{maxWidth:"75vw", margin:"8px"}}>
                                     
-                                        <CardMedia src={ab1.image} component="img"/>
-                                        <CardContent>
-                                            <Typography variant='title'>
+                                        <CardMedia style={{display:"block", objectFit:"none",align:"center"}} src={ab1.image} component="img"/>
+                                        <CardContent style={{fontSize:"25px"}}>
+                                            <Typography style={{fontFamily: "Verdana", fontSize:"35px"}} variant='title'>
                                                 {ab1.header}
                                             </Typography>
-
+                                            <Divider/>
                                             {ab1.detail}
                                         </CardContent>
                                     </Card>
