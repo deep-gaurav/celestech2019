@@ -203,7 +203,7 @@ class Header extends Component{
                             tooltipOpen
                             tooltipTitle="Instagram"
                             tooltipPlacement="top"
-                            onClick = {()=>{window.open("")}}
+                            onClick = {()=>{window.open("https://")}}
                         />    
                     </SpeedDial>
                     </MuiThemeProvider>

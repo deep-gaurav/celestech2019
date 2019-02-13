@@ -90,9 +90,9 @@ class Events extends Component{
                     'name':'Quizosity',
                     "slogan":"",
                     'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED..",
-                    "format":false,
+                    /* "format":false,
                     "rules":false,
-                    "contact":false,
+                    "contact":false,*/
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
@@ -100,8 +100,61 @@ class Events extends Component{
                 {
                     'poster':codathonPoster,
                     'name':'Codathon',
-                    'shortDescription':'Placeholder text to be changed later. Codathon is a coding competition event....... Some lorem ipsum to be replaced...',
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'shortDescription':"Are you ready to test your programming skills? Then join us on 22nd of feb for codathon at Aryabhatta College. This is a competition designed to test your understanding and skills in programming and problem solving. So register now and unleash the coder inside you.",
+                    "details":[
+                        {
+                            "name":"Format",
+                            "value":
+                            <div><ol>
+                                <li>The event consist of three Rounds.</li>
+                                <h4>Round1/Quiz Round-I:</h4><br/>
+                                <li>Consist of 20 Objectives type questions based on General Computer Science.</li>
+                                <li>Each team is provided with a Question sheet and Answer Sheet.</li>
+                                <li>Time limit 20 minutes.</li>
+                                <li>For each right answer 1 point will be rewarded with no negative marking.</li>
+                                </ol>
+                                <ol>
+                                    <h4>Round 2 / Quiz Round – II :</h4>
+                                    <li>Consist 25 questions based on Output and Error Detection in C/C++ Code</li>
+                                    <li>All Questions are objective.</li>
+                                    <li>Each team is provided with a Question sheet and Answer sheet.</li>
+                                    <li>Time limit 40 minutes.</li>
+                                    <li>For each wrong answer 1 point is deducted and 3 points will be rewarded to right answer.</li>
+                                </ol>
+
+                                <ol>
+                                    <h4>Round 3 / Final Coding Round :</h4>
+                                    <li>Final round will consist of two questions out of which the participants have to attempt one.</li>
+                                    <li>This a coding round. Teams will have to write code in C or C++ using the available resources.</li>
+                                    <li>Time limit 1 Hour + 15 Bonus minutes.</li>
+                                    <li>Team with highest point will win the CODATHON.</li>
+                                    
+                                </ol>
+                            </div>
+                        },
+                        {
+                            "name":"Rules",
+                            "value": <ol>
+                                <li> Participants should carry their valid ID card of their respective college.</li>
+                                <li> Each team can have at most 2 members.</li>
+                                <li>The organisers reserve all rights to disqualify any team for usage of unfair means.</li>
+                                <li>Teams have to complete each round in a given time limit, using only the materials provided.</li>
+                            </ol>
+                        },
+                        {
+                            "name":"Prizes",
+                            "value":"Rs 6000"            
+                            },
+                        {
+                            "name":"Student Cordinators",
+                            "value":<ol>
+                                    <li>Yash Sharma – 9718268388</li>
+                                    <li>Ishant Malik – 8630252808</li>
+                                </ol>
+
+                        }
+
+                        ],
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
@@ -109,7 +162,8 @@ class Events extends Component{
                 {
                     'poster':treasureHuntPoster,
                     'name':'Treasure Hunt',
-                    'shortDescription':'Placeholder text to be changed later. Treasure Hunt is a finding competition... ....... Some lorem ipsum to be replaced...',
+                    'slogan':'Embrace the unknown, because it is there you will find your treasure',
+                    'shortDescription':'“Embrace the unknown, because it is there you will find your treasure”',
                     'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
                     'schedule':"2019-02-27 10:30:00",
 
@@ -275,7 +329,7 @@ class Events extends Component{
                                                             event.details!=undefined && 
                                                             event.details.map((detail,index)=>(
                                                                 
-                                                                <ExpansionPanel defaultExpanded>
+                                                                <ExpansionPanel >
                                                                     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
                                                                         <Typography variant="title">
                                                                             {detail.name}
