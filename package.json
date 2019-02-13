@@ -13,6 +13,7 @@
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
     "react-center": "^1.1.1",
+    "react-css-blur": "^1.1.1",
     "react-dom": "^16.8.1",
     "react-flip-clock-en": "^1.0.6",
     "react-material-ui-form-validator": "^2.0.3",
