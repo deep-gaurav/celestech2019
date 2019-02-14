@@ -26,15 +26,19 @@ import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
 import {Link} from 'react-router-dom';
-import { ListItemText, SvgIcon } from '@material-ui/core';
+import { ListItemText, SvgIcon, withWidth } from '@material-ui/core';
 import {SpeedDial,SpeedDialAction,SpeedDialIcon} from '@material-ui/lab';
 import Share from '@material-ui/icons/Share';
 import CameraEnhance from '@material-ui/icons/CameraEnhance';
 import { grey } from '@material-ui/core/colors';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 class Header extends Component{
+
+
     constructor(props){
         super(props);
+        console.log(props);
         this.state = {
             width:0,
             height:0,
@@ -123,13 +127,21 @@ class Header extends Component{
                                     Celestech
                                 </Button>
                             </Typography>
-                            <IconButton style={{margin:10}} onClick={()=>{
-                                this.setState({
-                                    openDrawer:true
-                                })
-                            }} >
-                                <MenuIcon/>
-                            </IconButton>
+                            {
+                                (this.props.width!="xs" && this.props.width!="sm") ? NavItems.map((navitem,index)=>(
+                                    <Button to={navitem.path} variant="flat" component={Link}>
+                                        {navitem.name}
+                                    </Button>
+                                )):
+                                <IconButton style={{margin:10}} onClick={()=>{
+                                        this.setState({
+                                            openDrawer:true
+                                        })
+                                    }} >
+                                    <MenuIcon/>
+                                </IconButton>
+                            }
+                            
                         </Toolbar>
 
                     </AppBar>
@@ -203,7 +215,7 @@ class Header extends Component{
                             tooltipOpen
                             tooltipTitle="Instagram"
                             tooltipPlacement="top"
-                            onClick = {()=>{window.open("https://")}}
+                            onClick = {()=>{window.open("https://instagram.com/techpioneersofficial")}}
                         />    
                     </SpeedDial>
                     </MuiThemeProvider>
@@ -288,4 +300,4 @@ class Header extends Component{
     }
 }
 
-export default Header;
+export default withWidth()(Header);
