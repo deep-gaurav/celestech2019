@@ -81,7 +81,7 @@ class About extends Component{
                         this.detail.map(
                             (ab1,index)=>(
                                 <Grid item >
-                                    <Card style={{maxWidth:"75vw", margin:"8px"}}>
+                                    <Card style={{position:"relative",maxWidth:"75vw", margin:"8px"}}>
                                     
                                         <CardMedia style={{display:"block",align:"center"}} src={ab1.image} component="img"/>
                                         <CardContent style={{fontSize:"3vmin",font:"happytimes"}}>

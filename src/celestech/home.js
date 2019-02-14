@@ -142,7 +142,7 @@ class Home extends Component{
 
 				<div style = {{ backgroundColor:"white"}}>
 					<div style={{padding:"20px"}}>
-					<Card elevation={6}>
+					<Card  elevation={6} style={{position:"relative",zIndex:50}}>
 						<CardActionArea >
 							<CardMedia image={festImage} height="150" style={{width:"100%",objectFit:"none"}} title = "Celestech" component="img"/>
 
