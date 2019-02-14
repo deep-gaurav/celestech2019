@@ -264,7 +264,7 @@ class Header extends Component{
                                   "enable": true,
                                   "distance": 150,
                                   "color": "#BBB",
-                                  "opacity": 0.9,
+                                  "opacity": 0.7,
                                   "width": 1
                                 },
                                 "move": {
