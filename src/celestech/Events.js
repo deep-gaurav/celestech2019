@@ -197,7 +197,7 @@ class Events extends Component{
     render()
     {
         return (
-            <div style={{padding:"10px",backgroundColor:"black"}}>
+            <div style={{padding:"10px",backgroundColor:"white"}}>
 
                 <div style={{height:"10vh"}}></div>
                 

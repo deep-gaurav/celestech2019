@@ -7,7 +7,7 @@ class Contact extends Component{
     render() {
 
         return(
-            <div style={{backgroundColor:"black",padding:"10px",paddingTop:"4em"}}>
+            <div style={{backgroundColor:"white",padding:"10px",paddingTop:"4em"}}>
                 <Paper style={{padding:"10px"}}>
                     <Typography variant="display2" align="center">
                         Contact Us

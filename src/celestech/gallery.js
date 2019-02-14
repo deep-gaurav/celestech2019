@@ -25,7 +25,7 @@ class Gallery extends Component{
     render()
     {
         return (
-            <div style={{paddingTop:"4em", backgroundColor:"black"}}>
+            <div style={{paddingTop:"4em", backgroundColor:"white"}}>
                 <Paper style={{margin:"10px"}}>
                     <Typography align="center" variant="display1" gutterBottom>
                         Gallery

@@ -32,7 +32,7 @@ Aryabhatta College is a co-educational institution and conducts Humanities, Arts
 
 
         return(
-            <div style={{padding:"10px",paddingTop:"4em", backgroundColor:"black"}}>
+            <div style={{padding:"10px",paddingTop:"4em", backgroundColor:"white"}}>
                 <Paper>
                     <Grid container direction="column" justify="center" alignItems="center">
                     {

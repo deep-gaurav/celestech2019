@@ -116,7 +116,7 @@ class Header extends Component{
 
             <div>
                 <Fade in={true} timeout={700}>
-                    <AppBar position='fixed' style= {{backgroundColor:'#FFF9'}}>
+                    <AppBar position='fixed' style= {{backgroundColor:'#FFFB'}}>
                         <Toolbar>
                             <Typography variant='title' style= {{flexGrow:1}}>
                                 <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"inHuman",fontSize:"2em"}}>
@@ -210,11 +210,66 @@ class Header extends Component{
                 </div>
                 <Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
                            params= {{
-                               "particles":{
-                                    "number":{
-                                        "value":this.state.width/15
-                                    }
-                               },
+                            "particles": {
+                                "number": {
+                                  "value": 80,
+                                  "density": {
+                                    "enable": true,
+                                    "value_area": 800
+                                  }
+                                },
+                                "color": {
+                                  "value": ["#BD10E0","#B8E986","#50E3C2","#FFD300","#E86363"]
+                                },
+                                "shape": {
+                                  "type": "circle",
+                                  "stroke": {
+                                    "width": 0,
+                                    "color": "#b6b2b2"
+                                  }
+                                },
+                                "opacity": {
+                                  "value": 0.7211089197812949,
+                                  "random": false,
+                                  "anim": {
+                                    "enable": true,
+                                    "speed": 1,
+                                    "opacity_min": 0.1,
+                                    "sync": false
+                                  }
+                                },
+                                "size": {
+                                  "value": 8.017060304327615,
+                                  "random": true,
+                                  "anim": {
+                                    "enable": true,
+                                    "speed": 12.181158184520175,
+                                    "size_min": 0.1,
+                                    "sync": true
+                                  }
+                                },
+                                "line_linked": {
+                                  "enable": true,
+                                  "distance": 150,
+                                  "color": "#BBB",
+                                  "opacity": 0.9,
+                                  "width": 1
+                                },
+                                "move": {
+                                  "enable": true,
+                                  "speed": 1,
+                                  "direction": "none",
+                                  "random": false,
+                                  "straight": false,
+                                  "out_mode": "bounce",
+                                  "bounce": false,
+                                  "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                  }
+                                }
+                              },
                                "interactivity":{
                                    "events":{
                                        "onhover":{
