@@ -239,7 +239,7 @@ class Events extends Component{
 						<Grid container spacing={16} justify="center">
 						{this.state.events.map((event,index)=>(
 							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
-							<Card evevation={8} >
+							<Card evevation={8} style={{position:"relative"}} >
 								<CardActionArea onClick={()=>{
                                         event.open=true;
                                         this.state.events[index]=event;

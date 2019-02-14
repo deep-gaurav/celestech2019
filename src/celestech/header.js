@@ -220,7 +220,7 @@ class Header extends Component{
                     </SpeedDial>
                     </MuiThemeProvider>
                 </div>
-                <Particles height={(this.state.height)+'px'} style={{position:'fixed'}}
+                <Particles height={(this.state.height)+'px'} style={{position:'fixed',zIndex:0}}
                            params= {{
                             "particles": {
                                 "number": {
