@@ -93,13 +93,13 @@ class Home extends Component{
 		return(
 			<div>
 					
-				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'black',height:(this.state.height-80)+"px",width:"100%"}} >
+				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',height:(this.state.height-80)+"px",width:"100%"}} >
 
 						<div>
 					<p
 
 						align = 'center'
-						style = {{color:'#FFF',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
+						style = {{color:'navy blue',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
 					>
 						Celestech
 						<Waypoint
@@ -119,11 +119,11 @@ class Home extends Component{
 					</p>
 						</div>
 
-						<Typography style={{color:"#FFF", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
+						<Typography style={{color:"#000", fontSize:"6vmin",marginBottom:"2em"}} align="center" gutterBottom>
 							Department of Computer Science
 
 
-						<Typography style={{color:"#FFF", fontSize:"3vmin",marginBottom:"2em"}} align="center" gutterBottom>
+						<Typography style={{color:"#000", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
 							Aryabhatta College, University of Delhi
 						</Typography>
 
@@ -140,7 +140,7 @@ class Home extends Component{
 					count_to = "2019-02-27 00:00:00"
 				/>
 
-				<div style = {{ backgroundColor:"#000"}}>
+				<div style = {{ backgroundColor:"white"}}>
 					<div style={{padding:"20px"}}>
 					<Card elevation={6}>
 						<CardActionArea >
