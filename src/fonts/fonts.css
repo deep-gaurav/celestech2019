@@ -1,6 +1,18 @@
 @font-face {
-	font-family: 'inHuman';
+	font-family: 'HT';
 	font-weight: 'normal';
 	font-style: 'normal';
-	src: url('./InhumanBB.ttf');
+	src: url('./ethnocentric rg.ttf');
+}
+@font-face {
+	font-family: 'ERASDEMI';
+	font-weight: 'normal';
+	font-style: 'normal';
+	src: url('./ERASDEMI.TTF');
+}
+@font-face {
+	font-family: 'happytimes';
+	font-weight: 'bold';
+	font-style: ' ';
+	src: url('./happytimes.otf');
 }

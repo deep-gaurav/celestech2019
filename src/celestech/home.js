@@ -95,11 +95,11 @@ class Home extends Component{
 					
 				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',height:(this.state.height-80)+"px",width:"100%"}} >
 
-						<div>
+						<div style={{paddingTop:"80px", width:"100%"}}>
 					<p
 
 						align = 'center'
-						style = {{color:'navy blue',margin:'0px',fontFamily:'inHuman',fontSize:"20vw"}}
+						style = {{color:'#000080',margin:'0px',fontFamily:'HT',fontSize:"8vw"}}
 					>
 						Celestech
 						<Waypoint
@@ -119,11 +119,11 @@ class Home extends Component{
 					</p>
 						</div>
 
-						<Typography style={{color:"#000", fontSize:"6vmin",marginBottom:"2em"}} align="center" gutterBottom>
+						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"8vmin",marginBottom:"2em"}} align="center" gutterBottom>
 							Department of Computer Science
 
 
-						<Typography style={{color:"#000", fontSize:"4vmin",marginBottom:"2em"}} align="center" gutterBottom>
+						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"6vmin",marginBottom:"2em"}} align="center" gutterBottom>
 							Aryabhatta College, University of Delhi
 						</Typography>
 
@@ -166,7 +166,6 @@ class Home extends Component{
 							</Button>
 						</CardActions>
 					</Card>
-
 
 					</div>
 					

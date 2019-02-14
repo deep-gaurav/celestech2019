@@ -84,8 +84,8 @@ class About extends Component{
                                     <Card style={{maxWidth:"75vw", margin:"8px"}}>
                                     
                                         <CardMedia style={{display:"block",align:"center"}} src={ab1.image} component="img"/>
-                                        <CardContent style={{fontSize:"3vmin"}}>
-                                            <Typography style={{paddingBottom: "1.5vmax",fontFamily: "", fontSize:"4vmin"}} variant='title'>
+                                        <CardContent style={{fontSize:"3vmin",font:"happytimes"}}>
+                                            <Typography style={{paddingBottom: "1.5vmax",fontSize:"5vmin",fontFamily:'ERASDEMI'}} variant='title'>
                                                 {ab1.header}
                                             </Typography>
                                             {ab1.detail}
