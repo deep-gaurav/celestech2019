@@ -87,18 +87,18 @@ class Events extends Component{
                     
                     'open':false
                 },
-                {
+                /*{
                     'poster':quizosityPoster,
                     'name':'Quizosity',
                     "slogan":"",
                     'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED..",
-                    /* "format":false,
+                     "format":false,
                     "rules":false,
-                    "contact":false,*/
+                    "contact":false,
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
-                },
+        },*/
                 {
                     'poster':codathonPoster,
                     'name':'Codathon',
@@ -116,7 +116,7 @@ class Events extends Component{
                                 <li>For each right answer 1 point will be rewarded with no negative marking.</li>
                                 </ol>
                                 <ol>
-                                    <h4>Round 2 / Quiz Round – II :</h4>
+                                    <h4>Round 2 / Quiz Round – II :</h4><br/>
                                     <li>Consist 25 questions based on Output and Error Detection in C/C++ Code</li>
                                     <li>All Questions are objective.</li>
                                     <li>Each team is provided with a Question sheet and Answer sheet.</li>
@@ -125,7 +125,7 @@ class Events extends Component{
                                 </ol>
 
                                 <ol>
-                                    <h4>Round 3 / Final Coding Round :</h4>
+                                    <h4>Round 3 / Final Coding Round :</h4><br/>
                                     <li>Final round will consist of two questions out of which the participants have to attempt one.</li>
                                     <li>This a coding round. Teams will have to write code in C or C++ using the available resources.</li>
                                     <li>Time limit 1 Hour + 15 Bonus minutes.</li>
@@ -161,7 +161,7 @@ class Events extends Component{
 
                     'open':false
                 },
-                {
+                /*{
                     'poster':treasureHuntPoster,
                     'name':'Treasure Hunt',
                     'slogan':'Embrace the unknown, because it is there you will find your treasure',
@@ -170,12 +170,37 @@ class Events extends Component{
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
-                },
+                },*/
                 {
                     'poster':junkyardPoster,
                     'name':'Junkyard Wars',
-                    'shortDescription':'Placeholder text to be changed later. junkyardWars is a junkyard scrap building competition....... Some lorem ipsum to be replaced...',
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
+                    'shortDescription':'Its time to showcase your engineering knowledge.You have to think reverse and assemble the machine in a limited time-frame.',
+                    "details":[
+                        {
+                            "name":"Format",
+                            "value":<div>
+                                The event consist of two Round.
+                                <h4>Round 1 / Elimination Round :</h4><br/>
+                                <ol>
+                                    <li>Consist 40 questions based on computer hardware.</li>
+                                    <li>Questions are mixed of subjective and objective.</li>
+                                    <li>Each team is provided with a Question sheet and Answer sheet.</li>
+                                    <li>Time limit 20 minutes.</li>
+                                    <li>For each wrong answer 1 point is deducted and 3 points will be rewarded to right answer.</li>
+                                </ol>
+                                <h4>Round 2 / Final Round :</h4>
+                                <ol>
+                                    <li>Those shortlisted from Elimination Round will take part in this Final Round.</li>
+                                    <li>The finalist would have to assemble the machine using the given materials.</li>
+                                    <li>On completion of machine 15 points will be rewarded.</li>
+                                    <li>Final points awarded is based on the points scored in the game.</li>
+                                    <li>Time limit 25 minutes.</li>
+                                    <li>Team with highest point win the JUNKYARD WARS.</li>
+                                    
+                                </ol>
+                            </div>
+                        
+                    }],
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
