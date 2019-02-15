@@ -32,8 +32,18 @@ import indigo from '@material-ui/core/colors/indigo';
 import red from '@material-ui/core/colors/red';
 
 import Events from './Events';
+import quizosityPoster from './res/events/quizosity.jpg';
+import codathonPoster from './res/events/codathon.jpg';
+import junkyardPoster from './res/events/junkyardWars.jpg';
+import treasureHuntPoster from './res/events/treasureHunt.jpg';
+import uniconPoster from './res/events/unicon.jpg';
+import itTambolaPoster from './res/events/it_tambola.jpg';
+import MarqueeDouble from 'react-marquee-double';
 
-import festImage from './res/fest2018.jpg';
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
+import festImage from './res/fest2019.png';
 //import './home.scss';
 
 const theme = createMuiTheme({
@@ -47,6 +57,14 @@ const theme = createMuiTheme({
 
 class Home extends Component{
 
+	eventPoster=[
+		quizosityPoster,
+		codathonPoster,
+		junkyardPoster,
+		treasureHuntPoster,
+		uniconPoster,
+		itTambolaPoster
+	]
 
 	constructor(props){
 		super(props);
@@ -137,15 +155,21 @@ class Home extends Component{
 
 				</Grid>
 				<FlipClock
-					count_to = "2019-02-27 00:00:00"
+					count_to = "2019-02-27T00:00:00"
 				/>
 
 				<div style = {{ backgroundColor:"white"}}>
 					<div style={{padding:"20px"}}>
 					<Card  elevation={6} style={{position:"relative",zIndex:50}}>
 						<CardActionArea >
-							<CardMedia image={festImage} height="150" style={{width:"100%",objectFit:"none"}} title = "Celestech" component="img"/>
-
+							<Grid container justify="space-around" alignItems="center">
+								<Grid item>
+									<Card >
+										<img style={{height:this.state.height*0.7}} src={festImage} component="img"/>
+									</Card>
+								</Grid>
+							<Grid item xs={12} sm={12} md={6} lg={7} >
+							<Card>
 							<CardContent>
 								<Typography
 									variant="title"
@@ -153,12 +177,15 @@ class Home extends Component{
 								>
 									Celestech - Aryabhatta College
 								</Typography>
-								<Typography variant="p">
-									Template text to be replace.
-									Celestech is annual fest of Aryabhatta College hosted by the Computer Department Society 
-									TechPioneers.. ....some more lorem ipsum to be replaced here........
+								<Typography variant="body1" style={{fontSize:"3vmin", minWidth:"100px"}}>
+								"Celestech" is the annual fest organised by the Department of Computer Science, Aryabhatta College, University of Delhi. It involves multifarious technical and non-tech events attracting a huge crowd from across different colleges of the Delhi University every year.
+Celestech is organized with the objective to provide a platform for the students to showcase their talent and skills with a competitive spirit. From amazing events including Codathon, Junkyard Wars, Quizosity, IT Tambola, LAN Gaming and multiple fun-filled games, we are coming back this February. Pen down the dates and get ready for a boisterous experience.
 								</Typography>
 							</CardContent>
+							</Card>
+							</Grid>
+
+							</Grid>
 						</CardActionArea>
 						<CardActions>
 							<Button color="primary" >
@@ -170,7 +197,23 @@ class Home extends Component{
 					</div>
 					
 				</div>
-
+				<Carousel
+					arrows
+					slidesPerPage={parseInt(this.state.width/400)}
+					slidesPerScroll={1}
+					infinite
+					clickToChange
+					centered
+					animationSpeed={1500}
+					autoPlay={2000}
+					stopAutoPlayOnHover
+				>
+					{this.eventPoster.map((posterItem,index)=>(
+						<Card elevation={10}>
+							<CardMedia src={posterItem} component="img" style={{width:"20vw"}}/>
+						</Card>
+					))}
+				</Carousel>
 			</div>
 			)
 	}
