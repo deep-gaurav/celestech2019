@@ -87,18 +87,53 @@ class Events extends Component{
                     
                     'open':false
                 },
-                /*{
+                {
                     'poster':quizosityPoster,
                     'name':'Quizosity',
-                    "slogan":"",
-                    'shortDescription':"Placeholder text to be changed later. Quizority is a quiz event,. It's tech quiz with 3 rounds.... TO BE REPLACED..",
-                     "format":false,
-                    "rules":false,
-                    "contact":false,
+                    "slogan":"You know, You Grow",
+                    'shortDescription':" Quizosity, the Tech quiz competition organised to test your knowledge as well as broaden your horizons. So get ready for the roller coaster ride into the intense world of computer science and technology.",
+                     "details":[
+                         {
+                             "name":"Rules",
+                             "value":<ol>
+                                 <li>Entries must be individually or in a team of maximum 2 members.</li>
+                                 <li>Participants should carry valid ID cards of their college.</li>
+                                 <li>The participants will not be allowed to use mobile or other electronic devices. </li>
+                                 <li>Organizers have the right to disqualify any team on the basis of breaking rules and their decision shall abide.</li>
+                                 <li>No entry or registration fee.</li>
+                             </ol>
+                         },
+                         {
+                             "name":"Preliminary Round (Elimination Round)",
+                             "value":"Each team will face 20 questions and have to write down the answers on a sheet of paper provided to them.The qualifying teams will face the final round."
+                         },
+                         {
+                            "name":"Final Round",
+                            "value":<div>
+                                Final round will comprise of two sub-rounds as follows:
+                                <h4>Round 1 (Infinite Bounce) </h4>
+                                <h4>Round 2 (Friend Unfriend)</h4>
+                                Scores for both the rounds in the final round will be added to decide the winners.
+
+                            </div>
+
+                            
+                         },
+                         {
+                             "name":"Cash Prizes",
+                             "value":<ul>
+                                 <li>1st Position: </li>
+                                 <li>2nd Position:</li>
+                                 <li>3rd Position:</li>
+                             </ul>
+
+                         }
+                         
+                     ],
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
-        },*/
+        },
                 {
                     'poster':codathonPoster,
                     'name':'Codathon',
@@ -154,10 +189,11 @@ class Events extends Component{
                                     <li>Ishant Malik – 8630252808</li>
                                 </ol>
 
-                        }
+                        },
+                        
 
                         ],
-                    'schedule':"2019-02-27 10:30:00",
+                    'schedule':"2019-02-28 10:30:00",
 
                     'open':false
                 },
@@ -200,11 +236,43 @@ class Events extends Component{
                                 </ol>
                             </div>
                         
-                    }],
+                    },
+                    {
+                        "name":"Rules",
+                        "value":
+                            <ol>
+                                <li>Participants should carry their valid ID card of their respective college.</li>
+                                <li>To participate in this event he must register for event by paying Rs 50 per candidate fees.</li>
+                                <li>Each team must have 2 members .</li>
+                                <li>For Final Round teams have to be appear for Elimination Round.</li>
+                                <li>The organisers reserve all rights to disqualify any team for usage of unfair means.</li>
+                                <li>Teams have to complete each round in a given time limit , using only the materials provided.</li>
+                            </ol>
+                        
+                    },
+                    {
+                        "name":"Prizes",
+                        "value":"Rs 3300 + coupons"
+                    },
+                    {
+                        "name":"Venue",
+                        "value":"Room No.9"
+                    },
+                    {
+                        "name":"Time",
+                        "value":"10:30-12:30"
+                    },
+                    {
+                        "name":"Student Coordinators:",
+                        "value":"Ujjwal Pratap Singh  	: 	9560430897 "
+                    }
+
+                ],
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
                 },
+                /*
                 {
                     'poster':uniconPoster,
                     'name':'Unicon',
@@ -213,7 +281,7 @@ class Events extends Component{
                     'schedule':"2019-02-27 10:30:00",
 
                     'open':false
-                }
+                }*/
             ]
         }
     }
