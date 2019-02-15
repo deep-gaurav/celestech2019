@@ -125,7 +125,7 @@ class Header extends Component{
                     <AppBar position='fixed' style= {{backgroundColor:'#FFFE'}}>
                         <Toolbar>
                             <Typography variant='title' style= {{flexGrow:1}}>
-                                <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"HT",fontSize:"2vmax"}}>
+                                <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"HT",fontSize:"3vmax"}}>
                                     Celestech
                                 </Button>
                             </Typography>

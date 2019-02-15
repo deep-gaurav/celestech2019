@@ -111,44 +111,31 @@ class Home extends Component{
 					
 				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',height:(this.state.height-80)+"px",width:"100%"}} >
 
-						<div style={{paddingTop:"80px", width:"100%"}}>
-					<p
-
-						align = 'center'
-						style = {{color:'#000080',margin:'0px',fontFamily:'HT',fontSize:"8vw"}}
+					<Grid item
+						style = {{color:'#000080',margin:'0px',fontFamily:'HT',fontSize:this.state.width<this.state.height?"12vw":"9vw"}}
 					>
 						Celestech
-						<Waypoint
-							onEnter = {({previousPosition,currentPosition,event})=>{
-								this.setState({
-									showAppBar:false	
-								});
-							}}
-							onLeave = {({previousPosition,currentPosition,event})=>{
-								this.setState({
-									showAppBar:true	
-								});
-							}}
-
-						/>
 						
-					</p>
-						</div>
+					</Grid>
+				
+					<Grid item container direction="column" alignItems="center" justify="flex-start">
+					<Grid item>
+						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"6vmin",marginBottom:"6vw"}} align="center" gutterBottom>
+							Annual Fest, Department of Computer Science
 
-						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"8vmin",marginBottom:"2em"}} align="center" gutterBottom>
-							Department of Computer Science
-
-
-						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"6vmin",marginBottom:"2em"}} align="center" gutterBottom>
+						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"5vmin",marginBottom:"4vw"}} align="center" gutterBottom>
 							Aryabhatta College, University of Delhi
 						</Typography>
-
 						</Typography>
+					</Grid>
+					<Grid item>
 					<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
 						<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
 							Register
 						</Typography>
 					</Button>
+					</Grid>
+					</Grid>
 
 
 				</Grid>
