@@ -104,12 +104,12 @@ class Events extends Component{
                              </ol>
                          },
                          {
-                             "name":"Preliminary Round (Elimination Round)",
-                             "value":"Each team will face 20 questions and have to write down the answers on a sheet of paper provided to them.The qualifying teams will face the final round."
-                         },
-                         {
-                            "name":"Final Round",
-                            "value":<div>
+                             "name":"Rounds",
+                             "value":<div>
+                                <h4>Preliminary Round (Elimination Round)</h4>
+                                <p>Each team will face 20 questions and have to write down the answers on a sheet of paper provided to them.
+                                The qualifying teams will face the final round.</p>
+                                <h4>Final Round</h4> 
                                 Final round will comprise of two sub-rounds as follows:
                                 <h4>Round 1 (Infinite Bounce) </h4>
                                 <h4>Round 2 (Friend Unfriend)</h4>
