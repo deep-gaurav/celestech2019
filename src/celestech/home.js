@@ -38,8 +38,6 @@ import junkyardPoster from './res/events/junkyardWars.jpg';
 import treasureHuntPoster from './res/events/treasureHunt.jpg';
 import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
-import MarqueeDouble from 'react-marquee-double';
-
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
@@ -199,18 +197,17 @@ Celestech is organized with the objective to provide a platform for the students
 				</div>
 				<Carousel
 					arrows
-					slidesPerPage={parseInt(this.state.width/400)}
+					slidesPerPage={parseInt(this.state.width/400)>0?parseInt(this.state.width/400):1}
 					slidesPerScroll={1}
 					infinite
 					clickToChange
 					centered
 					animationSpeed={1500}
 					autoPlay={2000}
-					stopAutoPlayOnHover
 				>
 					{this.eventPoster.map((posterItem,index)=>(
-						<Card elevation={10}>
-							<CardMedia src={posterItem} component="img" style={{width:"20vw"}}/>
+						<Card elevation={10} style={{margin:"10px"}}>
+							<CardMedia src={posterItem} component="img" style={{width:"100%"}}/>
 						</Card>
 					))}
 				</Carousel>
