@@ -130,7 +130,7 @@ class Home extends Component{
 					</Grid>
 					<Grid item>
 					<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
-						<Typography style={{fontSize:"3vmin",padding:"5px"}} align="center" color="secondary">
+						<Typography variant="title" style={{fontSize:"4vmin",padding:"10px"}} align="center" color="secondary">
 							Register
 						</Typography>
 					</Button>
