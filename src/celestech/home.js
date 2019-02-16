@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import {createMuiTheme} from '@material-ui/core/styles';
@@ -42,6 +43,7 @@ import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 import festImage from './res/fest2019.png';
+import { Link } from '@material-ui/core';
 //import './home.scss';
 
 const theme = createMuiTheme({
@@ -66,6 +68,7 @@ class Home extends Component{
 
 	constructor(props){
 		super(props);
+		
 		this.state = {
 			width:0,
 			height:0,
@@ -112,7 +115,7 @@ class Home extends Component{
 				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',height:(this.state.height-80)+"px",width:"100%"}} >
 
 					<Grid item
-						style = {{color:'#000080',margin:'0px',fontFamily:'HT',fontSize:this.state.width<this.state.height?"12vw":"9vw"}}
+						style = {{color:'#000080',margin:'0px',marginTop:"20px",fontFamily:'HT',fontSize:this.state.width<this.state.height?"12vw":"9vw"}}
 					>
 						Celestech
 						
@@ -120,7 +123,7 @@ class Home extends Component{
 				
 					<Grid item container direction="column" alignItems="center" justify="flex-start">
 					<Grid item>
-						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"6vmin",marginBottom:"6vw"}} align="center" gutterBottom>
+						<Typography variant="p" style={{font:"Verdana",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"6vmin",marginBottom:"6vw"}} align="center" gutterBottom>
 							Annual Fest, Department of Computer Science
 
 						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"5vmin",marginBottom:"4vw"}} align="center" gutterBottom>
@@ -146,12 +149,15 @@ class Home extends Component{
 				<div style = {{ backgroundColor:"white"}}>
 					<div style={{padding:"20px"}}>
 					<Card  elevation={6} style={{position:"relative",zIndex:50}}>
-						<CardActionArea >
+						<CardActionArea onClick={()=>{
+							const {history} = this.props;
+							console.log(this.props)	
+							history.push("/about")
+						}}>
 							<Grid container justify="space-around" alignItems="center">
 								<Grid item>
-									<Card >
 										<img style={{height:this.state.height*0.7}} src={festImage} component="img"/>
-									</Card>
+									
 								</Grid>
 							<Grid item xs={12} sm={12} md={6} lg={7} >
 							<Card>
@@ -172,11 +178,6 @@ Celestech is organized with the objective to provide a platform for the students
 
 							</Grid>
 						</CardActionArea>
-						<CardActions>
-							<Button color="primary" >
-								Learn More
-							</Button>
-						</CardActions>
 					</Card>
 
 					</div>
@@ -194,7 +195,11 @@ Celestech is organized with the objective to provide a platform for the students
 				>
 					{this.eventPoster.map((posterItem,index)=>(
 						<Card elevation={10} style={{margin:"10px"}}>
+							<CardActionArea onClick={()=>{
+								this.props.history.push("/events")
+							}}>
 							<CardMedia src={posterItem} component="img" style={{width:"100%"}}/>
+							</CardActionArea>
 						</Card>
 					))}
 				</Carousel>
@@ -205,4 +210,4 @@ Celestech is organized with the objective to provide a platform for the students
 }
 
 
-export default Home;
+export default withRouter(Home);

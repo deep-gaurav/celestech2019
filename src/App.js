@@ -9,6 +9,7 @@ import Contact from  './celestech/sponsor';
 import Gallery from './celestech/gallery';
 import Events from './celestech/Events';
 import Header from './celestech/header';
+import Schedule from './celestech/scedule';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
@@ -44,7 +45,7 @@ const routing = (
                 <Route path="/sponsor" component={Contact} />
                 <Route path="/gallery" component={Gallery} />
                 <Route path="/events" component={Events} />
-
+                <Route path="/schedule" component={Schedule} />
                 <Footer/>
             </MuiThemeProvider>
         </div>

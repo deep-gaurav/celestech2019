@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Paper, Typography, Grid, Dialog,Card, CardActionArea } from '@material-ui/core';
+import { Paper, Typography, Grid, Dialog,Card, CardActionArea, DialogContent } from '@material-ui/core';
 
 function importAll(r) {
     let images = {};
@@ -7,7 +7,6 @@ function importAll(r) {
     return images;
   }
   
-
 
 class Gallery extends Component{
 
@@ -50,7 +49,6 @@ class Gallery extends Component{
                                     </CardActionArea>
                                 </Card>
                                 <Dialog
-                                    fullWidth
                                     maxWidth={false}
                                     scroll='body'
                                     open={this.images[imgname]["open"]}
@@ -74,8 +72,23 @@ class Gallery extends Component{
                                             }
                                         )
                                     }}
+
+                                    PaperProps={{
+                                        style:{
+                                            margin:"auto",
+                                            alignSelf:"center",
+                                            display:"inline-block",
+                                        }
+                                    }}
+
+                                    style={{
+                                        display:"flex",
+                                        justifyContent:"center",
+                                        alignItems:"center"
+                                    }}
                                 >
-                                    <img  src={this.images[imgname]["image"]} style={{display:"block",maxWidth:"100%"}} />
+                                        <img  src={this.images[imgname]["image"]} style={{ margin:"10px", objectFit:"scale-down",display:"block",maxHeight:"60vh",maxWidth:"100%"}} />
+
                                 </Dialog>
 
                                 

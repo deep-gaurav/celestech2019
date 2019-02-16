@@ -100,6 +100,11 @@ class Header extends Component{
                 "name":"Contact",
                 "path":"/contact",
                 "icon":""
+            },
+            {
+                "name":"Schedule",
+                "path":"/schedule",
+                "icon":""
             }
         ];
         let NavList = (
