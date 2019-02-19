@@ -41,6 +41,8 @@ import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
 import { Slider } from '@material-ui/lab';
 
+import {Email as EmailIcon,Phone as PhoneIcon} from '@material-ui/icons';
+
 class Events extends Component{
 
     DateFormat = { weekday: 'long', month: 'long', day: 'numeric' };
@@ -50,10 +52,12 @@ class Events extends Component{
         this.state={
             'events': [
 
-                {
+                {// IT Tambola
                     'poster':itTambolaPoster,
                     "name":"IT Tambola",
+                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link",
                     "slogan":"Shot in the Dark",
+                    "venue":"Multipurpose Hall",
                     'shortDescription':"Tombola is the Italian version of Bingo. However, unlike the American version, where you can make Bingo horizontally, vertically, or diagonally, In Tombola, only horizontally counts.",
                     "details":[
                         {
@@ -77,22 +81,46 @@ class Events extends Component{
                         {
                             "name":"Contact",
                             "value":<ul>
-                                <li>
-                                    Deepak
-                                </li>
+                                <li>Deepak Tripathi <PhoneIcon/> +91 96439 29224</li>
+                                <li>Chandranshu Gupta <PhoneIcon/> +91 91615 10390</li>
                             </ul>
                         }
                         ],
-                    'schedule':"2019-02-27 10:30:00",
+                    'schedule':"2019-02-27T10:30:00",
                     
                     'open':false
                 },
-                {
+                { //QUIZOSITY
                     'poster':quizosityPoster,
                     'name':'Quizosity',
+                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link",
                     "slogan":"You know, You Grow",
                     'shortDescription':" Quizosity, the Tech quiz competition organised to test your knowledge as well as broaden your horizons. So get ready for the roller coaster ride into the intense world of computer science and technology.",
-                     "details":[
+                    "venue":"Seminar Room",
+                    "details":[
+
+                         {
+                             "name":"Format",
+                             "value":<div>
+                                <h4>Preliminary Round (Elimination Round)</h4>
+                                <p>Each team will face 20 questions and have to write down the answers on a sheet of paper provided to them.
+                                The qualifying teams will face the final round.</p>
+                                <h4>Final Round</h4> 
+                                Final round will comprise of two sub-rounds as follows:
+                                <ul>
+                                    <li>
+                                        <h4>Round 1 (Infinite Bounce) </h4>
+                                    </li>
+                                    <li>
+                                        <h4>Round 2 (Friend Unfriend)</h4>
+                                    </li>
+                                </ul>
+                                Scores for both the rounds in the final round will be added to decide the winners.
+
+                            </div>
+
+                            
+                         },
                          {
                              "name":"Rules",
                              "value":<ol>
@@ -104,112 +132,92 @@ class Events extends Component{
                              </ol>
                          },
                          {
-                             "name":"Rounds",
-                             "value":<div>
-                                <h4>Preliminary Round (Elimination Round)</h4>
-                                <p>Each team will face 20 questions and have to write down the answers on a sheet of paper provided to them.
-                                The qualifying teams will face the final round.</p>
-                                <h4>Final Round</h4> 
-                                Final round will comprise of two sub-rounds as follows:
-                                <h4>Round 1 (Infinite Bounce) </h4>
-                                <h4>Round 2 (Friend Unfriend)</h4>
-                                Scores for both the rounds in the final round will be added to decide the winners.
-
-                            </div>
-
-                            
-                         },
-                         {
-                             "name":"Cash Prizes",
+                             "name":"Contact",
                              "value":<ul>
-                                 <li>1st Position: </li>
-                                 <li>2nd Position:</li>
-                                 <li>3rd Position:</li>
+                                <li>Raghav Jaggi<PhoneIcon/> +91 97173 67929</li>
+                                <li>Aastha Goel <PhoneIcon/>+91 95996 51765</li>
                              </ul>
 
                          }
                          
                      ],
-                    'schedule':"2019-02-27 10:30:00",
+                    'schedule':"2019-02-27T12:00:00",
 
                     'open':false
-        },
-                {
+                },
+                { //CODATHON
                     'poster':codathonPoster,
+                    'slogan':"Ready,Set,Code",
+                    "venue":"Old Computer Lab",
+                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSfChYz1j6Eo3C840c-vX9l69GsQ6arQevFJF0ZMUHYuMmcpkQ/viewform?usp=sf_link",
                     'name':'Codathon',
-                    'shortDescription':"Are you ready to test your programming skills? Then join us on 22nd of feb for codathon at Aryabhatta College. This is a competition designed to test your understanding and skills in programming and problem solving. So register now and unleash the coder inside you.",
+                    'shortDescription':<p>Are you ready to test your programming skills? Then join us on 27nd of feb
+                    for Codathon at Aryabhatta College. A competition designed to test your understanding
+                    and skills in programming and problem solving, Codathon will push your programming
+                    expertise to it limits. So what are you waiting for? Register now and unleash the coder
+                    inside you.</p>,
                     "details":[
                         {
                             "name":"Format",
                             "value":
-                            <div><ol>
-                                <li>The event consist of three Rounds.</li>
-                                <h4>Round1/Quiz Round-I:</h4><br/>
-                                <li>Consist of 20 Objectives type questions based on General Computer Science.</li>
-                                <li>Each team is provided with a Question sheet and Answer Sheet.</li>
-                                <li>Time limit 20 minutes.</li>
-                                <li>For each right answer 1 point will be rewarded with no negative marking.</li>
-                                </ol>
-                                <ol>
-                                    <h4>Round 2 / Quiz Round – II :</h4><br/>
-                                    <li>Consist 25 questions based on Output and Error Detection in C/C++ Code</li>
-                                    <li>All Questions are objective.</li>
-                                    <li>Each team is provided with a Question sheet and Answer sheet.</li>
-                                    <li>Time limit 40 minutes.</li>
-                                    <li>For each wrong answer 1 point is deducted and 3 points will be rewarded to right answer.</li>
-                                </ol>
-
-                                <ol>
-                                    <h4>Round 3 / Final Coding Round :</h4><br/>
-                                    <li>Final round will consist of two questions out of which the participants have to attempt one.</li>
-                                    <li>This a coding round. Teams will have to write code in C or C++ using the available resources.</li>
-                                    <li>Time limit 1 Hour + 15 Bonus minutes.</li>
-                                    <li>Team with highest point will win the CODATHON.</li>
-                                    
-                                </ol>
+                            <div><b>Prelims</b>
+                            <ul>
+                            <li>
+                            Each team will be provided with a Question Sheet consisting of 20 questions
+                            and an answer sheet.
+                            </li>
+                            <li>Questions will be based on following themes: finding output and general
+                            programming concepts..
+                            </li>
+                            <li>{"1\u20444"} marks are deducted for wrong answers.</li>
+                            <li>Marks are awarded as mentioned in the question sheet along questions for
+                            correct answers.</li>
+                            <li>Participants will be given 45 minutes to complete this round.
+                            </li>
+                            </ul>
+                            <b>Finals:</b>
+                            <ul>
+                            <li>Final round will consist of three questions out of which the participants have to
+                            attempt two.</li>
+                            <li>Teams are permitted to write the code in C/C++/python using the available
+                            resources.</li>
+                            <li>Time Limit for this round is 60 minutes.</li>
+                            <li>Team with the highest points wins the Event.</li>
+                            </ul>
                             </div>
                         },
                         {
                             "name":"Rules",
                             "value": <ol>
-                                <li> Participants should carry their valid ID card of their respective college.</li>
-                                <li> Each team can have at most 2 members.</li>
-                                <li>The organisers reserve all rights to disqualify any team for usage of unfair means.</li>
-                                <li>Teams have to complete each round in a given time limit, using only the materials provided.</li>
+                                <li>Participants should carry their valid ID card of their respective college.</li>
+                                <li>Each team can have at most 2 members.</li>
+                                <li>The organisers reserve all rights to disqualify any team for usage of
+                                unfair means.</li>
+                                <li>Question Paper with Answer Script.</li>
+                                <li>Teams have to complete each round in a given time limit, using only the
+                                materials provided.</li>
                             </ol>
                         },
                         {
-                            "name":"Prizes",
-                            "value":"Rs 6000"            
-                            },
-                        {
-                            "name":"Student Cordinators",
+                            "name":"Contact",
                             "value":<ol>
-                                    <li>Yash Sharma – 9718268388</li>
-                                    <li>Ishant Malik – 8630252808</li>
+                                <li>Yash Sharma <PhoneIcon/>+91 97182 68388</li>
+                                <li>Ishant Malik <PhoneIcon/>+91 97583 11272</li>
                                 </ol>
 
                         },
                         
 
                         ],
-                    'schedule':"2019-02-28 10:30:00",
+                    'schedule':"2019-02-27T11:00:00",
 
                     'open':false
                 },
-                /*{
-                    'poster':treasureHuntPoster,
-                    'name':'Treasure Hunt',
-                    'slogan':'Embrace the unknown, because it is there you will find your treasure',
-                    'shortDescription':'“Embrace the unknown, because it is there you will find your treasure”',
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
-                    'schedule':"2019-02-27 10:30:00",
-
-                    'open':false
-                },*/
-                {
+                {// JUNKYARD
                     'poster':junkyardPoster,
                     'name':'Junkyard Wars',
+                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdLo2l5RtQheDI3S0_ydfCXk5WsbXOEy0es6vuIFeu57snD5A/viewform?usp=sf_link",
+                    
                     'shortDescription':'Its time to showcase your engineering knowledge.You have to think reverse and assemble the machine in a limited time-frame.',
                     "details":[
                         {
@@ -251,37 +259,266 @@ class Events extends Component{
                         
                     },
                     {
-                        "name":"Prizes",
-                        "value":"Rs 3300 + coupons"
-                    },
-                    {
-                        "name":"Venue",
-                        "value":"Room No.9"
-                    },
-                    {
-                        "name":"Time",
-                        "value":"10:30-12:30"
-                    },
-                    {
-                        "name":"Student Coordinators:",
-                        "value":"Ujjwal Pratap Singh  	: 	9560430897 "
+                        "name":"Contact",
+                        "value":<ul>
+                            <li>
+                            Ujjwal Pratap Singh <PhoneIcon/> +91 95604 30897
+                            </li>
+                            <li>
+                            Nitin Mahour <PhoneIcon/>+91 84481 43797
+                            </li>
+                        </ul>
                     }
 
                 ],
-                    'schedule':"2019-02-27 10:30:00",
+                    "venue":"Room Number 9",
+                    'schedule':"2019-02-27T10:00:00",
 
                     'open':false
                 },
-                /*
-                {
-                    'poster':uniconPoster,
-                    'name':'Unicon',
-                    'shortDescription':'Placeholder text to be changed later. Unicon is a gaming event ... ....... Some lorem ipsum to be replaced...',
-                    'longDescription':" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula ornare magna et aliquet. Nulla sed lorem dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend bibendum commodo. Suspendisse leo elit, consectetur nec arcu a, lacinia consectetur purus. Praesent congue nibh neque. Integer ornare euismod nunc sed tincidunt. Pellentesque enim erat, mattis venenatis scelerisque a, finibus in lorem. Nam vel tristique lorem, interdum viverra ex. Curabitur laoreet neque quis lectus porta, et tempor dui molestie. Morbi viverra est quis sollicitudin tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec elementum nisi non suscipit scelerisque. Duis a elementum nibh.  Nunc viverra vitae nisl non placerat. Nam aliquet erat sed auctor convallis. Curabitur hendrerit, turpis rhoncus lacinia pretium, odio est lobortis leo, in varius dui ante in justo. Nullam lacinia metus ac orci molestie tincidunt. Morbi congue tortor at cursus commodo. Suspendisse eu elementum massa. Vivamus quis vehicula dui. Nunc ex ipsum, tempor sed fermentum eget, rhoncus sed neque. Praesent sit amet quam orci. Praesent nec nisl eu lectus posuere molestie sit amet sit amet lorem. Nullam gravida eros eu sollicitudin mattis. Nunc faucibus feugiat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo enim vel rutrum tincidunt. Ut quis mollis orci. ",
-                    'schedule':"2019-02-27 10:30:00",
+                {//TREASURE HUNT
+                    "name":"Chasse au Tresor",
+                    "poster":treasureHuntPoster,
+                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSekGq3c1vnnYzwhpX8Yb0Fwy99Xq4gOruxCafuTMRu4IpQxZQ/viewform?usp=sf_link",
+                    "slogan":"Embrace the unknown, because it is there you will find your treasure",
+                    "shortDescription":<p>
+                        Whether it’s too cold to play outside ,a birthday party,or just an ordinary day,
+Treasure hunts are a great and easy way to keep everyone entertained. They offer a huge amount of everlasting. Fun and will improve their physical and intellectual
+Development.
+                    </p>,
+                    "venue":"Ground",
+                    "schedule":"2019-02-27T12:00:00",
+                    "details":[
+                        {
+                            "name":"Format",
+                            "value":<div>
+                                <b>Preliminary Round</b>
+                                <p>
+                                Each team will have to compete in a task in order to win their way through this round to the main hunt. Only 12 teams will be allowed to pass through.
+                                </p>
+                                <b>Final Hunt</b>
+                                <ul>
+                                    <li>
+                                        <b>Part 1</b>
+                                        <p>Teams have to complete some tasks in order to proceed to the next stage
 
-                    'open':false
-                }*/
+The 8 teams that will complete the given tasks in the fastest time will be proceeded to the next round. The rest 4 teams would be eliminated.
+
+The maximum time they would be given to complete this round would be max 45 minutes
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <b>Part 2</b>
+                                        <p> 8 teams that have have just cleared the first part will follow the procedure of solving clues.
+
+Same as the previous round teams again will face an elimination round. In this round only the first fastest 4 teams are given the chance to compete in the next round. Rest 4 teams are eliminated. Then similarly 2 teams will be eliminated.
+
+
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <b>Part 3</b>
+                                        <p>  Top two teams will compete for the final clue and winner will be decided. 
+
+                                        </p>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        },
+                        {
+                            "name":"Rules",
+                            "value":<div>
+                                <ol>
+                                <li>Only team entries are eligible.</li>
+
+                                <li>Decision of the hunt is final.</li>
+
+                                <li>If a team cheats at any stage during the hunt they will be disqualified right then and there.</li>
+
+
+                                </ol>
+                            </div>
+                        },
+                        {
+                            "name":"Contact",
+                            "value":<ul>
+                                <li>
+                                    Kshitij Jain <PhoneIcon/>+91 99994 77256
+                                </li>
+
+                                <li>
+                                    Mehak Khazanchi <PhoneIcon/> +91 98738 84939
+                                </li>
+                            </ul>
+                        }
+                    ]
+                },
+                {//UNICON
+                    "name":"Unicon",
+                    "poster":uniconPoster,
+                    "link":"",
+                    "slogan":"Unleash your gaming instinct",
+                    "shortDescription":<p>
+                        Lan Gaming is a platform for students to showcase their gaming skills in various games including PUBG- Mobile. 
+                    </p>,
+                    "venue":"New Lab",
+                    "schedule":"2019-02-27T10:30:00",
+                    "details":[
+                        {
+                            "name":"PUBG Mobile",
+                            "value":<div>
+                                 *Please note that There is also a registration fee of 100 INR for a DUO and 250 INR for a SQUAD.
+
+                                <ul>
+                                    <li>You are free to play with squads, duo or solo.</li>
+
+                                    <li>No cheating (USE OF AIMBOTS, WALL HACKS, SPEEDHACKS, ETC.) All players will be closely monitored and if anyone is caught cheating, that player/team will be disqualified.</li>
+
+                                    <li>Do not delay in registration, or check-in.</li>
+
+                                    <li>Team killing is strictly prohibited and if anyone is seen fooling around with teammates using grenades, that player will be disqualified.</li>
+
+                                </ul>
+                            </div>
+                        },
+                        {
+                            "name":"Tekken 3",
+                            "value":<div>
+                                Game Settings
+
+                                <ul>
+                                    Game Version: PlayStation 4<br/>
+
+                                    Rounds: Best of 3<br/>
+
+                                    Timer: 60 seconds<br/>
+
+                                    Winner must keep character<br/>
+
+                                    Loser may switch<br/>
+
+                                    Stage Select: Random<br/>
+
+                                    Character Customizations: Off<br/>
+
+                                    All base characters are allowed in the tournament.<br/>
+                                </ul>
+                            </div>
+                        },
+                        {
+                            "name":"FIFA 18",
+                            "value":<div>
+                                <b>Rules</b>
+                                <ol>
+
+
+                                        <li>All Clubs and International Teams can be used.</li>
+
+                                        <li>FIFA 18 will be played on PS4.</li>
+
+                                    <li>A total of 2 minutes per match will be provided to a player to set up his team settings, substitution and formation.</li>
+
+                                    <li>Player cannot use his own custom player to play match.</li>
+
+                                    <li>A player may bring his own controller to play a match .</li>
+
+                                    <li>If player intentionally damages any equipment of setup (PC,laptop, tv screen or controller) he will be immediately disqualified and will have to pay the full cost of equipment.</li>
+
+                                    <li>All games are played on the FIFA 18 Kick-Off mode.</li>
+
+                                    <li>The Player named first always has to stand/sit on the left side facing the screen.</li>
+
+                                    <li>The Player named first has to play with Home Team.</li>
+
+                                    <li>No memory cards or saved games are permitted.</li>
+
+                                    <li>Players are prohibited from wearing headsets and may not listen to any music during play.</li>
+
+                                    <li>Controllers for each respective Supported Platform are supplied by PWNED. It is the responsibility of all Players to be familiar with the controller’s functions and mode of operation. If a controller is defective, a Player can pause the game and notify the referee. The referee will determine the controller status in making such a decision. If a Player plays with a defective controller, all results are nevertheless valid.</li>
+
+                                    <li>Unnecessary pauses or delays are prohibited.</li>
+
+                                    <li>Any action designed to disrupt the opposing Player's view of the field or ability to select controlled players is prohibited.</li>
+
+                                    <li>Each game will begin play at its designated time, and as designated on site at the tournament.</li>
+
+                                    <li>Players not present at the designated start time for any match will be disqualified, and their opponent shall be granted a 3-0 score. Players are encouraged to be in the designated play area 15 minutes prior to game time.</li>
+
+                                    <li>Players will be shown their designated station, shall set up the game and immediately begin play. Each Player will have 2 minutes to configure controls, line-ups and settings in accordance with the rules described above under “Game-play settings”. Custom packages cannot be used, nor can anything else that is not available in the in-game pause menu.</li>
+
+                                    <li>Players shall be responsible for keeping track of game situation so if a game is interrupted, the situation can be restored. In all situations possible, tournament referees will monitor the game situation so that it may be restored in the event of game interruptions.</li>
+
+                                    <li>Players shall raise their hands at the end of the game so a referee can record their score. Only scores reported to the referee are official.</li>
+
+                                    <li>No game interruptions, except for designated pauses to report scores (if any), will be allowed.</li>
+
+                                </ol>
+                                <b>Game-play Settings</b>
+                                <ol>
+
+• Difficulty Level: Legendary<br/>
+
+• Half Length: 5 minutes, 6 minutes for quarter-finals, semi-finals and finals<br/>
+
+• Injuries: On<br/>
+
+• Offsides: On<br/>
+
+• Time of Day: 08:00 PM<br/>
+
+• Season: Spring<br/>
+
+• Time/Score display: On<br/>
+
+• Camera: Tele Broadcast<br/>
+
+• Radar: 2D or 3D<br/>
+
+• Home Auto Switching: User Settings<br/>
+
+• Away Auto Switching: User Settings<br/>
+
+• Volume Settings: Default<br/>
+
+• Extra Time: extra time will be played in the event of a draw after regulation time. Penalties will decide the winner if after extra time the scores are level.<br/>
+
+• Custom formations are not permitted. Custom tactics and set pieces are available.<br/>
+
+                                </ol>
+                                <b>Unfair Play</b>
+                                <ul>
+
+
+                                <li>Use of any cheat program</li>
+
+                                <li>Intentional disconnection</li>
+
+                                <li>Use of any settings exceeding standard and permitted settings</li>
+
+                                <li>If the match is disrupted due to unnecessary chatting, the player may be given a warning or lose by default at the referee’s sole discretion.</li>
+
+                                <li>Upon discovery of any player committing any violations regarded as unfair play, that player will be disqualified from the tournament.</li>
+
+                                <li>During the course of any match, the operations staff and/or referee may determine other actions to be unfair play at any time.</li>
+
+
+                                </ul>
+                            </div>
+                        },
+                        {
+                            "name":"Contact",
+                            "value":<ul>
+                                <li>Aman Saini <PhoneIcon/> +91 72910 65354</li>
+                                <li>Akanksha <PhoneIcon/> +91 97116 82245</li>
+                                <li>Utkarsh Raghav <PhoneIcon/> +91 97179 58327</li>
+                                <li>Vinit Bhatt <PhoneIcon/> +91 98914 13058</li>
+                            </ul>
+                        }
+                    ]
+                }
             ]
         }
     }
@@ -430,30 +667,39 @@ class Events extends Component{
                                                 <Card style={{ margin:"10px"}}>
                                                     <CardContent>
                                                         <Grid container alignItems="center" justify="space-between" >
-                                                        <Grid item>
+                                                        <Grid xs={12} style={{width:"100%"}} alignItems="center" container justify="space-between" item>
+                                                            <Grid  item>
                                                             <Typography
                                                                 variant='h5'
                                                             >
                                                                 {event.name}
                                                             </Typography>
+                                                            </Grid>
+                                                            <Grid item>
+
+                                                            <Button variant="raised" color="primary" onClick={()=>(window.open(event.link))}>
+                                                                Register
+                                                            </Button>
+                                                            </Grid>
+
+                                                        </Grid>
+
                                                             <Typography variant="h6">
                                                                 {event.slogan}
                                                             </Typography>
 
-                                                            <Typography variant="subheading" align="center">
-                                                                <AccessTime/>    {new Date(event.schedule).toLocaleDateString("en-US",this.DateFormat)}
+                                                            <Typography variant="subheading" align="left">
+                                                                <AccessTime/>    {(new Date(event.schedule)).toLocaleString('en-us', { month: 'long', day: 'numeric',hour:"numeric",minute:"numeric"})}
+
+                                                            </Typography>
+                                                            <Typography variant="subheading" align="left">
+                                                                Venue : {event.venue}
 
                                                             </Typography>
                                                         </Grid>
-                                                        <Grid item>
 
-                                                            <Button variant="raised" color="primary">
-                                                                Register
-                                                                </Button>
-                                                        </Grid>
-                                                        </Grid>
                                                         <Divider/>
-                                                        <Typography variant="body1">
+                                                        <Typography variant="body1" style={{margin:"15px"}}>
                                                             {event.shortDescription}
                                                         </Typography>
                                                         {
@@ -480,7 +726,7 @@ class Events extends Component{
                                         </Grid>
                                         
                                     </Dialog>
-									<Button color="secondary">
+									<Button color="secondary" onClick={()=>(window.open(event.link))}>
 										Register
 									</Button>
 								</CardActions>

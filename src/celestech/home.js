@@ -132,7 +132,9 @@ class Home extends Component{
 						</Typography>
 					</Grid>
 					<Grid item>
-					<Button variant='outlined' color='secondary' style={{alignSelf:"center"}}>
+					<Button onClick={()=>{
+						this.props.history.push("/events")
+					}} variant='outlined' color='secondary' style={{alignSelf:"center"}}>
 						<Typography variant="title" style={{fontSize:"4vmin",padding:"10px"}} align="center" color="secondary">
 							Register
 						</Typography>
