@@ -26,7 +26,7 @@ import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
-import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Grow, Collapse, Zoom} from '@material-ui/core';
+import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Grow, Collapse, Zoom, Popover, DialogContent,DialogTitle} from '@material-ui/core';
 import Blur from 'react-css-blur';
 
 import AccessTime from '@material-ui/icons/AccessTime';
@@ -41,7 +41,7 @@ import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
 import { Slider } from '@material-ui/lab';
 
-import {Email as EmailIcon,Phone as PhoneIcon} from '@material-ui/icons';
+import {Email as EmailIcon,Phone as PhoneIcon,CalendarToday as CalendarIcon,LocationOnRounded as LocationIcon, AccountBalanceWallet as BalanceIcon} from '@material-ui/icons';
 
 class Events extends Component{
 
@@ -55,9 +55,10 @@ class Events extends Component{
                 {// IT Tambola
                     'poster':itTambolaPoster,
                     "name":"IT Tambola",
-                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link",
+                    "price":"₹20/Ticket",
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link")),
                     "slogan":"Shot in the Dark",
-                    "venue":"Multipurpose Hall",
+                    "venue":"Conference Hall",
                     'shortDescription':"Tombola is the Italian version of Bingo. However, unlike the American version, where you can make Bingo horizontally, vertically, or diagonally, In Tombola, only horizontally counts.",
                     "details":[
                         {
@@ -93,7 +94,8 @@ class Events extends Component{
                 { //QUIZOSITY
                     'poster':quizosityPoster,
                     'name':'Quizosity',
-                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link",
+                    "price":"Free",
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdzfswBCGAF4AO7On_RykKayV6yRISY2T4O3tM67J52i6mrDQ/viewform?usp=sf_link")),
                     "slogan":"You know, You Grow",
                     'shortDescription':" Quizosity, the Tech quiz competition organised to test your knowledge as well as broaden your horizons. So get ready for the roller coaster ride into the intense world of computer science and technology.",
                     "venue":"Seminar Room",
@@ -148,8 +150,9 @@ class Events extends Component{
                 { //CODATHON
                     'poster':codathonPoster,
                     'slogan':"Ready,Set,Code",
+                    "price":"Free",
                     "venue":"Old Computer Lab",
-                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSfChYz1j6Eo3C840c-vX9l69GsQ6arQevFJF0ZMUHYuMmcpkQ/viewform?usp=sf_link",
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSfChYz1j6Eo3C840c-vX9l69GsQ6arQevFJF0ZMUHYuMmcpkQ/viewform?usp=sf_link")),
                     'name':'Codathon',
                     'shortDescription':<p>Are you ready to test your programming skills? Then join us on 27nd of feb
                     for Codathon at Aryabhatta College. A competition designed to test your understanding
@@ -215,9 +218,10 @@ class Events extends Component{
                 },
                 {// JUNKYARD
                     'poster':junkyardPoster,
+                    "price":"Free",
                     'name':'Junkyard Wars',
-                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSdLo2l5RtQheDI3S0_ydfCXk5WsbXOEy0es6vuIFeu57snD5A/viewform?usp=sf_link",
-                    
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdLo2l5RtQheDI3S0_ydfCXk5WsbXOEy0es6vuIFeu57snD5A/viewform?usp=sf_link")),
+                    "slogan":"Because Junk isn't just Junk",
                     'shortDescription':'Its time to showcase your engineering knowledge.You have to think reverse and assemble the machine in a limited time-frame.',
                     "details":[
                         {
@@ -235,7 +239,7 @@ class Events extends Component{
                                 <h4>Round 2 / Final Round :</h4>
                                 <ol>
                                     <li>Those shortlisted from Elimination Round will take part in this Final Round.</li>
-                                    <li>The finalist would have to assemble the machine using the given materials.</li>
+                                    <li>The finalist would have to assemble the machine along with that they have to set up the network using the given materials.</li>
                                     <li>On completion of machine 15 points will be rewarded.</li>
                                     <li>Final points awarded is based on the points scored in the game.</li>
                                     <li>Time limit 25 minutes.</li>
@@ -278,8 +282,9 @@ class Events extends Component{
                 },
                 {//TREASURE HUNT
                     "name":"Chasse au Tresor",
+                    "price":"₹50/Team",
                     "poster":treasureHuntPoster,
-                    "link":"https://docs.google.com/forms/d/e/1FAIpQLSekGq3c1vnnYzwhpX8Yb0Fwy99Xq4gOruxCafuTMRu4IpQxZQ/viewform?usp=sf_link",
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSekGq3c1vnnYzwhpX8Yb0Fwy99Xq4gOruxCafuTMRu4IpQxZQ/viewform?usp=sf_link")),
                     "slogan":"Embrace the unknown, because it is there you will find your treasure",
                     "shortDescription":<p>
                         Whether it’s too cold to play outside ,a birthday party,or just an ordinary day,
@@ -359,12 +364,20 @@ Same as the previous round teams again will face an elimination round. In this r
                 {//UNICON
                     "name":"Unicon",
                     "poster":uniconPoster,
+                    "price":"Paid",
                     "link":"",
                     "slogan":"Unleash your gaming instinct",
                     "shortDescription":<p>
                         Lan Gaming is a platform for students to showcase their gaming skills in various games including PUBG- Mobile. 
                     </p>,
                     "venue":"New Lab",
+                    "openPopup":false,
+                    "popup":<div>
+                        <Grid container direction="column">
+                            <Grid item><Button variant="flat" onClick={()=>{window.open("https://docs.google.com/forms/d/e/1FAIpQLSeWzQXGE7gDV2oCRwT9DL8QUOwG3EzSAckKJ6Ny5uCXqwweJQ/viewform?usp=sf_link")}}>PUBG</Button></Grid>
+                            <Grid item><Button variant="flat" onClick={()=>{window.open("https://docs.google.com/forms/d/e/1FAIpQLSfOHQHxwL8x7Hp8oz55JxO8WtSotFXfngT-D9XyN-cAmjMQ9w/viewform?usp=sf_link")}}>FIFA and TEKKEN</Button></Grid>
+                        </Grid>
+                    </div>,
                     "schedule":"2019-02-27T10:30:00",
                     "details":[
                         {
@@ -533,7 +546,7 @@ Same as the previous round teams again will face an elimination round. In this r
 
                 <div style={{height:"10vh"}}></div>
                 
-                <Paper >
+                <Paper style={{fontFamily:"HT"}}>
 						<Typography
 							variant = "display1"
 							align = "center"
@@ -670,30 +683,74 @@ Same as the previous round teams again will face an elimination round. In this r
                                                         <Grid xs={12} style={{width:"100%"}} alignItems="center" container justify="space-between" item>
                                                             <Grid  item>
                                                             <Typography
-                                                                variant='h5'
+                                                                variant='title'
+                                                                style={{fontSize:"1.4em"}}
                                                             >
                                                                 {event.name}
                                                             </Typography>
                                                             </Grid>
                                                             <Grid item>
 
-                                                            <Button variant="raised" color="primary" onClick={()=>(window.open(event.link))}>
+                                                            <Button variant="raised" color="primary" onClick={()=>{
+                                                                if(event.popup){
+                                                                    event.openPopup=true;
+                                                                    this.setState(
+                                                                        {
+                                                                        }
+                                                                    );
+                                                                }else{
+                                                                    event.link();
+                                                                }
+                                                            }}>
                                                                 Register
                                                             </Button>
+                                                            <Dialog
+                                                                open={event.openPopup}
+                                                                anchorEl={null}
+                                                                onBackdropClick={()=>{
+                                                                    event.openPopup=false;
+                                                                    this.setState(
+                                                                        {
+
+                                                                        }
+                                                                    )
+                                                                }}
+                                                            >
+                                                                <DialogTitle>
+
+                                                                <Typography
+                                                                    variant="title"
+                                                                    style={{padding:"10px"}}
+                                                                >
+                                                                    Register in
+                                                                </Typography>
+                                                                </DialogTitle>
+                                                                <DialogContent>
+                                                                <Divider/>
+                                                                <div>
+                                                                    {event.popup}
+                                                                </div>
+                                                                </DialogContent>
+                                                            </Dialog>
                                                             </Grid>
 
                                                         </Grid>
-
-                                                            <Typography variant="h6">
+                                                        <Grid item xs={12}>
+                                                            <Typography variant="headline" style={{fontSize:"1.2em"}}>
                                                                 {event.slogan}
                                                             </Typography>
+                                                        </Grid>
 
                                                             <Typography variant="subheading" align="left">
-                                                                <AccessTime/>    {(new Date(event.schedule)).toLocaleString('en-us', { month: 'long', day: 'numeric',hour:"numeric",minute:"numeric"})}
+                                                                <CalendarIcon/>    {(new Date(event.schedule)).toLocaleString('en-us', { month: 'long', day: 'numeric',hour:"numeric",minute:"numeric"})}
 
                                                             </Typography>
                                                             <Typography variant="subheading" align="left">
-                                                                Venue : {event.venue}
+                                                               <LocationIcon/> Venue : {event.venue}
+
+                                                            </Typography>
+                                                            <Typography variant="subheading" align="left">
+                                                               <BalanceIcon/> Price : {event.price}
 
                                                             </Typography>
                                                         </Grid>
@@ -718,15 +775,28 @@ Same as the previous round teams again will face an elimination round. In this r
                                                                 </ExpansionPanel>
                                                             ))
                                                         }
-                                                        
+                                                        <Typography style={{padding:"10px"}}>
+                                                        *Registrations will be confirmed on day of fest at registration desk.
+                                                        </Typography>
                                                     </CardContent>
                                                 </Card>
 
                                             </Grid>
+                                                    
                                         </Grid>
                                         
                                     </Dialog>
-									<Button color="secondary" onClick={()=>(window.open(event.link))}>
+									<Button color="secondary" onClick={()=>{
+                                                                if(event.popup){
+                                                                    event.openPopup=true;
+                                                                    this.setState(
+                                                                        {
+                                                                        }
+                                                                    );
+                                                                }else{
+                                                                    event.link();
+                                                                }
+                                                            }}>
 										Register
 									</Button>
 								</CardActions>

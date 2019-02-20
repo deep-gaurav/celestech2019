@@ -124,7 +124,7 @@ class Home extends Component{
 					<Grid item container direction="column" alignItems="center" justify="flex-start">
 					<Grid item>
 						<Typography variant="p" style={{font:"Verdana",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"6vmin",marginBottom:"6vw"}} align="center" gutterBottom>
-							Annual Fest, Department of Computer Science
+							Annual Technical Fest, Department of Computer Science
 
 						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"5vmin",marginBottom:"4vw"}} align="center" gutterBottom>
 							Aryabhatta College, University of Delhi

@@ -35,6 +35,8 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 import { blueGrey } from '@material-ui/core/es/colors';
 import { light } from '@material-ui/core/styles/createPalette';
 
+import TechPioneersLogo from './res/techpioneers.png';
+
 class Header extends Component{
 
 
@@ -131,7 +133,7 @@ class Header extends Component{
                         <Toolbar>
                             <Typography variant='title' style= {{flexGrow:1}}>
                                 <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"HT",fontSize:"3vmax"}}>
-                                    Celestech
+                                    <img src={TechPioneersLogo} style={{width:"1.8em",height:"1.8em",padding:"15px"}}/>Celestech
                                 </Button>
                             </Typography>
                             {

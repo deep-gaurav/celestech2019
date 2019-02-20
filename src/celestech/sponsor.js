@@ -46,10 +46,11 @@ class Sponsor extends Component{
                         infiniteLoop
                         autoPlay
                         stopOnHover={false}
+                        interval={5000}
                     >
                         {this.sponsors.map((sponsor,index)=>(
                             <div>
-                                <img src={sponsor.logo}/>
+                                <img src={sponsor.logo} style={{maxWidth:"400px"}}/>
                                 <h2 className="legend">{sponsor.name}</h2>
                             </div>
                         ))}
