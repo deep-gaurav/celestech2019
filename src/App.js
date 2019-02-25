@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './App.css';
 
 import Home from './celestech/home';
 import Footer from './celestech/footer';
@@ -10,6 +11,7 @@ import Gallery from './celestech/gallery';
 import Events from './celestech/Events';
 import Header from './celestech/header';
 import Schedule from './celestech/scedule';
+import KaroSambhav from './celestech/karosambhav';
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
@@ -46,6 +48,7 @@ const routing = (
                 <Route path="/gallery" component={Gallery} />
                 <Route path="/events" component={Events} />
                 <Route path="/schedule" component={Schedule} />
+                <Route path='/karosambhav' component={KaroSambhav}/>
                 <Footer/>
             </MuiThemeProvider>
         </div>
@@ -54,6 +57,7 @@ const routing = (
 )
 
 class App extends Component {
+    
   render() {
     return (
       routing

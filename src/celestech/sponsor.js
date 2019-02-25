@@ -1,10 +1,23 @@
 import React, {Component} from 'react';
 
-import aspenLogo from './res/sponsors/aspen.jpg';
-import grabonLogo from './res/sponsors/grabon.jpg';
-import landmarkLogo from './res/sponsors/landmark.jpg';
-import midlandLogo from './res/sponsors/midland.png';
-import uniqueLogo from './res/sponsors/unique.gif';
+
+import Picwik from './res/sponsors/Sponsors/Coverage Partner/picvik.jpg';
+
+import Aspen from './res/sponsors/Sponsors/Educational Partners/Aspen Research.jpg';
+import Landmark from './res/sponsors/Sponsors/Educational Partners/Landmark.jpg';
+import Sanmacs from './res/sponsors/Sponsors/Educational Partners/Sanmacs.jpg';
+import UniqueSiksha from './res/sponsors/Sponsors/Educational Partners/Unique Shiksha.jpg';
+
+import DULatestInformation from './res/sponsors/Sponsors/Media Partners/Du latest Information.jpg';
+import DUUnity from './res/sponsors/Sponsors/Media Partners/DU UNITY.jpg';
+import DUUpdates from './res/sponsors/Sponsors/Media Partners/Du Updates.jpg';
+
+import Midland from './res/sponsors/Sponsors/Publishing Partner/midland logo (Created).jpg';
+
+import GrabOn from './res/sponsors/Sponsors/Savings Partner/GrabOn.png';
+
+import Manacle from './res/sponsors/Sponsors/Technology Partner/Manacle.jpg';
+
 import { Paper } from '@material-ui/core';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -15,31 +28,66 @@ class Sponsor extends Component{
 
     sponsors = [
         {
-            "name":"Aspen Research Services",
-            "logo":aspenLogo
+            "name":"Picvik",
+            "image":Picwik,
+            "partner":"Coverage Partner"
         },
         {
-            "name":"GrabOn",
-            "logo":grabonLogo
+            "name":"Aspen Research",
+            "image":Aspen,
+            "partner":"Educational Partner"
         },
         {
-            "name":"Landmark Institue",
-            "logo":landmarkLogo
+            "name":"Landmark Institure",
+            "image":Landmark,
+            "partner":"Educational Partner"
         },
         {
-            "name":"Midland - The Book Shop",
-            "logo":midlandLogo
+            "name":"Sanmacs",
+            "image":Sanmacs,
+            "partner":"Educational Partner"
         },
         {
             "name":"Unique Siksha",
-            "logo":uniqueLogo
+            "image":UniqueSiksha,
+            "partner":"Educational Partner"
+        },
+        {
+            "name":"DU Latest Information",
+            "image":DULatestInformation,
+            "partner":"Media Partner"
+        },
+        {
+            "name":"DU Unity",
+            "image":DUUnity,
+            "partner":"Media Partner"
+        },
+        {
+            "name":"DU Updates",
+            "image":DUUpdates,
+            "partner":"Media Partner"
+        },
+        {
+            "name":"Midland",
+            "image":Midland,
+            "partner":"Publishing Partner"
+        },
+        {
+            "name":"GrabOn",
+            "image":GrabOn,
+            "partner":"Savings Partner"
+        },
+        {
+            "name":"Manacle",
+            "image":Manacle,
+            "partner":"Technology Partner"
         }
     ]
 
     render() {
 
         return(
-            <div style={{paddingTop:"4em"}}>
+            <div style={{paddingTop:"7em"}}>
                 <Paper>
                     <Carousel
                         showArrows
@@ -50,8 +98,8 @@ class Sponsor extends Component{
                     >
                         {this.sponsors.map((sponsor,index)=>(
                             <div>
-                                <img src={sponsor.logo} style={{maxWidth:"400px"}}/>
-                                <h2 className="legend">{sponsor.name}</h2>
+                                <img src={sponsor.image} style={{maxWidth:"400px"}}/>
+                                <h2 className="legend">{sponsor.partner}</h2>
                             </div>
                         ))}
                     </Carousel>

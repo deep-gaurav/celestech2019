@@ -7,11 +7,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardHeader from '@material-ui/core/CardHeader';
 import Waypoint from 'react-waypoint';
 import Button from '@material-ui/core/Button';
 import FlipClock from './flipclock';
@@ -40,10 +40,27 @@ import treasureHuntPoster from './res/events/treasureHunt.jpg';
 import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
 import Carousel from '@brainhubeu/react-carousel';
+
+import KaroSambhav from './res/events/karosambhav.png';
 import '@brainhubeu/react-carousel/lib/style.css';
 
-import festImage from './res/fest2019.png';
+import quizosityBanner from './res/events/banner/Quizosity.jpg';
+import codathonBanner from './res/events/banner/Codathon.jpg';
+import junkyardBanner from './res/events/banner/Junkyard.jpg';
+import treasureHuntBanner from './res/events/banner/TreasureHunt.jpg';
+import uniconBanner from './res/events/banner/Unicon.jpg';
+import itTambolaBanner from './res/events/banner/ITTambola.jpg';
+
+import festImage from './res/posteryellow2k19.jpg';
 import { Link } from '@material-ui/core';
+
+import Map from 'pigeon-maps';
+import Marker from 'pigeon-marker';
+import Overlay from 'pigeon-overlay';
+import { LocationOn, Event } from '@material-ui/icons';
+
+import Coverflow from 'react-coverflow';
+
 //import './home.scss';
 
 const theme = createMuiTheme({
@@ -64,6 +81,15 @@ class Home extends Component{
 		treasureHuntPoster,
 		uniconPoster,
 		itTambolaPoster
+	]
+
+	eventBanners=[
+		quizosityBanner,
+		codathonBanner,
+		junkyardBanner,
+		treasureHuntBanner,
+		uniconBanner,
+		itTambolaBanner
 	]
 
 	constructor(props){
@@ -110,28 +136,43 @@ class Home extends Component{
 		)
 
 		return(
-			<div>
+			<div className="FadeAnim">
 					
-				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',height:(this.state.height-80)+"px",width:"100%"}} >
+				<Grid container justify="center" alignItems="center" direction="column" style = {{backgroundColor:'white',paddingTop:"6em",height:(this.state.height-80)+"px",width:"100%"}} >
 
 					<Grid item
-						style = {{color:'#000080',margin:'0px',marginTop:"20px",fontFamily:'HT',fontSize:this.state.width<this.state.height?"12vw":"9vw"}}
+						style = {{color:'#000080',margin:'0px',fontFamily:'HT',fontSize:this.state.width<this.state.height?"12vw":"9vw"}}
 					>
+						<div style={{fontFamily:"ERASDEMI",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"6vmin"}} align="center">
+						Department of Computer Science
+						</div>
+						<div style={{fontFamily:"ERASDEMI",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"4vmin"}} align="center">
+						PRESENTS
+						</div>
+						<div style={{textShadow:"2px 2px black"}}>
 						Celestech
-						
+						</div>
 					</Grid>
 				
 					<Grid item container direction="column" alignItems="center" justify="flex-start">
 					<Grid item>
-						<Typography variant="p" style={{font:"Verdana",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"6vmin",marginBottom:"6vw"}} align="center" gutterBottom>
-							Annual Technical Fest, Department of Computer Science
+						<Typography style={{fontFamily:"ERASDEMI",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"4vmin"}} align="center">
+						The Annual Technical Fest
+						</Typography>
+					</Grid>
+					<Grid item>
 
-						<Typography style={{font:"Verdana",fontWeight:"bold",color:"#000", fontSize:"5vmin",marginBottom:"4vw"}} align="center" gutterBottom>
-							Aryabhatta College, University of Delhi
+						<Typography variant="p" style={{fontFamily:"ERASDEMI",fontWeight:"bold",color:"#000", maxWidth:"100%", fontSize:"6vmin",marginBottom:"4vw"}} align="center" gutterBottom>
+							Aryabhatta College
+
+						<Typography style={{fontFamily:"ERASDEMI",fontWeight:"bold",color:"#000", fontSize:"6vmin",marginBottom:"3vw"}} align="center" gutterBottom>
+							University of Delhi
 						</Typography>
 						</Typography>
 					</Grid>
 					<Grid item>
+
+
 					<Button onClick={()=>{
 						this.props.history.push("/events")
 					}} variant='outlined' color='secondary' style={{alignSelf:"center"}}>
@@ -150,29 +191,36 @@ class Home extends Component{
 
 				<div style = {{ backgroundColor:"white"}}>
 					<div style={{padding:"20px"}}>
-					<Card  elevation={6} style={{position:"relative",zIndex:50}}>
+					<Card  elevation={6} style={{position:"relative",zIndex:50
+					
+				}}>
 						<CardActionArea onClick={()=>{
 							const {history} = this.props;
 							console.log(this.props)	
 							history.push("/about")
 						}}>
-							<Grid container justify="space-around" alignItems="center">
+							<Grid container style={{
+						background:'linear-gradient(to bottom, rgb(252, 246, 210), rgb(251, 228, 178),#fcd59a)'}} justify="space-around" alignItems="center">
 								<Grid item>
 										<img style={{height:this.state.height*0.7}} src={festImage} component="img"/>
 									
 								</Grid>
 							<Grid item xs={12} sm={12} md={6} lg={7} >
-							<Card>
-							<CardContent>
+							<Card raised>
+							<CardContent
+								style={{
+									background:'linear-gradient(to bottom, rgb(251, 215, 158), rgb(252, 229, 179),#fbd79d)'
+								}}
+							>
 								<Typography
 									variant="title"
+									style={{fontSize:"2em"}}
 									gutterBottom
 								>
 									Celestech - Aryabhatta College
 								</Typography>
-								<Typography variant="body1" style={{fontSize:"3vmin", minWidth:"100px"}}>
+								<Typography variant="body1" style={{fontSize:"1.5em", minWidth:"100px"}}>
 								"Celestech" is the annual fest organised by the Department of Computer Science, Aryabhatta College, University of Delhi. It involves multifarious technical and non-tech events attracting a huge crowd from across different colleges of the Delhi University every year.
-Celestech is organized with the objective to provide a platform for the students to showcase their talent and skills with a competitive spirit. From amazing events including Codathon, Junkyard Wars, Quizosity, IT Tambola, LAN Gaming and multiple fun-filled games, we are coming back this February. Pen down the dates and get ready for a boisterous experience.
 								</Typography>
 							</CardContent>
 							</Card>
@@ -186,8 +234,7 @@ Celestech is organized with the objective to provide a platform for the students
 					
 				</div>
 				<Carousel
-					arrows
-					slidesPerPage={parseInt(this.state.width/400)>0?parseInt(this.state.width/400):1}
+					slidesPerPage={parseInt(this.state.width/600)>0?parseInt(this.state.width/400):1}
 					slidesPerScroll={1}
 					infinite
 					clickToChange
@@ -195,7 +242,7 @@ Celestech is organized with the objective to provide a platform for the students
 					animationSpeed={1500}
 					autoPlay={2000}
 				>
-					{this.eventPoster.map((posterItem,index)=>(
+					{this.eventBanners.map((posterItem,index)=>(
 						<Card elevation={10} style={{margin:"10px"}}>
 							<CardActionArea onClick={()=>{
 								this.props.history.push("/events")
@@ -205,6 +252,60 @@ Celestech is organized with the objective to provide a platform for the students
 						</Card>
 					))}
 				</Carousel>
+				
+				<Card raised style={{position:"relative",zIndex:50,margin:"15px",padding:"10px"}}>
+					<CardActionArea onClick={()=>{
+						this.props.history.push('/karosambhav')
+					}}>
+						<CardContent>
+							<Grid container justify="center" alignItems="stretch">
+								<Grid item>
+									<img src={KaroSambhav}/>
+								</Grid>
+								<Grid item md={9} container>
+								<Grid item>
+									<Typography variant="title">
+									Awareness Programme on Environmental Hazards of e-waste
+									</Typography>
+									<Typography align="right">
+										By- Karo Sambhav
+									</Typography>
+									<Divider/>
+								</Grid>
+								<Grid item>
+									<Typography variant="p" style={{fontSize:"18px"}}>
+									Karo Sambhav, one of India’s first authorised E-Waste Producer Responsibility Organisations, is organising awareness drives under the Ministry of Electronics and Information Technology’s (MeitY) “Awareness Programme on Environmental Hazards of e-waste through Digital India Initiative-Phase II” in association with Manufacturers Associate of Information Technology (MAIT).
+									<br/>
+									<Button variant="flat">Learn More</Button>
+									</Typography>
+									
+								</Grid>
+								</Grid>
+							</Grid>
+						</CardContent>
+					</CardActionArea>
+				</Card>
+
+				<Card raised style={{position:"relative",zIndex:50,padding:"10px",margin:"15px"}}>
+				
+				<CardContent>
+					<Map center={[28.578821785799896,77.16215372085571]} zoom={15} width={this.state.width-"40px"} height={400}>
+						<Marker anchor={[28.578821785799896,77.16215372085571]} payload={1} onClick={({ event, anchor, payload }) => {
+							window.open("https://goo.gl/maps/Ap9YwN7bbBo");
+						}} />
+						
+						<Overlay anchor={[28.578821785799896,77.16215372085571]} offset={[-20, 40]}>
+							<Typography variant="title">
+								<Event/>
+								Celestech
+							</Typography>
+							<Typography variant="title">
+								Aryabhatta College
+							</Typography>
+						</Overlay>
+					</Map>
+				</CardContent>
+				</Card>
 			</div>
 			)
 	}

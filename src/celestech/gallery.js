@@ -11,7 +11,7 @@ function importAll(r) {
 class Gallery extends Component{
 
     foldertosearch= "./res/gallery/Celestech18/";
-    images = importAll(require.context('./res/gallery/Celestech18/', false, /\.(png|jpe?g|svg)$/));
+    images = importAll(require.context('./res/gallery/Celestech18/', false, /\.(png|jpe?g|JPG|svg)$/));
 
     constructor(props){
         super(props)

@@ -133,7 +133,7 @@ class Header extends Component{
                         <Toolbar>
                             <Typography variant='title' style= {{flexGrow:1}}>
                                 <Button component={Link} to="/" variant="text" style={{ padding:"0px", fontFamily:"HT",fontSize:"3vmax"}}>
-                                    <img src={TechPioneersLogo} style={{width:"1.8em",height:"1.8em",padding:"15px"}}/>Celestech
+                                    <img src={TechPioneersLogo} style={{width:"1.8em",height:"1.8em",margin:"10px"}}/>Celestech
                                 </Button>
                             </Typography>
                             {
@@ -274,24 +274,10 @@ class Header extends Component{
                                 "line_linked": {
                                   "enable": true,
                                   "distance": 150,
-                                  "color": "#BBB",
+                                  "color": "#444",
                                   "opacity": 0.7,
                                   "width": 1
                                 },
-                                "move": {
-                                  "enable": true,
-                                  "speed": 1,
-                                  "direction": "none",
-                                  "random": false,
-                                  "straight": false,
-                                  "out_mode": "bounce",
-                                  "bounce": false,
-                                  "attract": {
-                                    "enable": false,
-                                    "rotateX": 600,
-                                    "rotateY": 1200
-                                  }
-                                }
                               },
                                "interactivity":{
                                    "events":{

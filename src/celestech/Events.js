@@ -26,7 +26,7 @@ import Particles from 'react-particles-js';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
-import {Transition, Slide, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Grow, Collapse, Zoom, Popover, DialogContent,DialogTitle} from '@material-ui/core';
+import {Transition, Grow,Zoom, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails,Collapse, Popover, DialogContent,DialogTitle} from '@material-ui/core';
 import Blur from 'react-css-blur';
 
 import AccessTime from '@material-ui/icons/AccessTime';
@@ -39,6 +39,14 @@ import junkyardPoster from './res/events/junkyardWars.jpg';
 import treasureHuntPoster from './res/events/treasureHunt.jpg';
 import uniconPoster from './res/events/unicon.jpg';
 import itTambolaPoster from './res/events/it_tambola.jpg';
+
+import quizosityBanner from './res/events/banner/Quizosity.jpg';
+import codathonBanner from './res/events/banner/Codathon.jpg';
+import junkyardBanner from './res/events/banner/Junkyard.jpg';
+import treasureHuntBanner from './res/events/banner/TreasureHunt.jpg';
+import uniconBanner from './res/events/banner/Unicon.jpg';
+import itTambolaBanner from './res/events/banner/ITTambola.jpg';
+
 import { Slider } from '@material-ui/lab';
 
 import {Email as EmailIcon,Phone as PhoneIcon,CalendarToday as CalendarIcon,LocationOnRounded as LocationIcon, AccountBalanceWallet as BalanceIcon} from '@material-ui/icons';
@@ -54,11 +62,12 @@ class Events extends Component{
 
                 {// IT Tambola
                     'poster':itTambolaPoster,
+                    'banner':itTambolaBanner,
                     "name":"IT Tambola",
                     "price":"₹20/Ticket",
                     "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdW7_pV5tNsQ0mHBrFn70R7QgfUh10gjSY6_w5blJvFtoSKjQ/viewform?usp=sf_link")),
                     "slogan":"Shot in the Dark",
-                    "venue":"Conference Hall",
+                    "venue":"Conference Room",
                     'shortDescription':"Tombola is the Italian version of Bingo. However, unlike the American version, where you can make Bingo horizontally, vertically, or diagonally, In Tombola, only horizontally counts.",
                     "details":[
                         {
@@ -93,6 +102,7 @@ class Events extends Component{
                 },
                 { //QUIZOSITY
                     'poster':quizosityPoster,
+                    'banner':quizosityBanner,
                     'name':'Quizosity',
                     "price":"Free",
                     "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdzfswBCGAF4AO7On_RykKayV6yRISY2T4O3tM67J52i6mrDQ/viewform?usp=sf_link")),
@@ -147,8 +157,75 @@ class Events extends Component{
 
                     'open':false
                 },
+                {// JUNKYARD
+                    'poster':junkyardPoster,
+                    'banner':junkyardBanner,
+                    "price":"Free",
+                    'name':'Junkyard Wars',
+                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdLo2l5RtQheDI3S0_ydfCXk5WsbXOEy0es6vuIFeu57snD5A/viewform?usp=sf_link")),
+                    "slogan":"Because Junk isn't just Junk",
+                    'shortDescription':'Its time to showcase your engineering knowledge.You have to think reverse and assemble the machine in a limited time-frame.',
+                    "details":[
+                        {
+                            "name":"Format",
+                            "value":<div>
+                                The event consist of two Round.
+                                <h4>Round 1 / Elimination Round :</h4><br/>
+                                <ol>
+                                    <li>Consist 40 questions based on computer hardware.</li>
+                                    <li>Questions are mixed of subjective and objective.</li>
+                                    <li>Each team is provided with a Question sheet and Answer sheet.</li>
+                                    <li>Time limit 20 minutes.</li>
+                                    <li>For each wrong answer 1 point is deducted and 3 points will be rewarded to right answer.</li>
+                                </ol>
+                                <h4>Round 2 / Final Round :</h4>
+                                <ol>
+                                    <li>Those shortlisted from Elimination Round will take part in this Final Round.</li>
+                                    <li>The finalist would have to assemble the machine along with that they have to set up the network using the given materials.</li>
+                                    <li>On completion of machine 15 points will be rewarded.</li>
+                                    <li>Final points awarded is based on the points scored in the game.</li>
+                                    <li>Time limit 25 minutes.</li>
+                                    <li>Team with highest point win the JUNKYARD WARS.</li>
+                                    
+                                </ol>
+                            </div>
+                        
+                    },
+                    {
+                        "name":"Rules",
+                        "value":
+                            <ol>
+                                <li>Participants should carry their valid ID card of their respective college.</li>
+                                <li>To participate in this event he must register for event by paying Rs 50 per candidate fees.</li>
+                                <li>Each team must have 2 members .</li>
+                                <li>For Final Round teams have to be appear for Elimination Round.</li>
+                                <li>The organisers reserve all rights to disqualify any team for usage of unfair means.</li>
+                                <li>Teams have to complete each round in a given time limit , using only the materials provided.</li>
+                            </ol>
+                        
+                    },
+                    {
+                        "name":"Contact",
+                        "value":<ul>
+                            <li>
+                            Ujjwal Pratap Singh <PhoneIcon/> +91 95604 30897
+                            </li>
+                            <li>
+                            Nitin Mahour <PhoneIcon/>+91 84481 43797
+                            </li>
+                        </ul>
+                    }
+
+                ],
+                    "venue":"Room Number 9",
+                    'schedule':"2019-02-27T10:00:00",
+
+                    'open':false
+                },
+
                 { //CODATHON
                     'poster':codathonPoster,
+                    'banner':codathonBanner,
                     'slogan':"Ready,Set,Code",
                     "price":"Free",
                     "venue":"Old Computer Lab",
@@ -216,74 +293,11 @@ class Events extends Component{
 
                     'open':false
                 },
-                {// JUNKYARD
-                    'poster':junkyardPoster,
-                    "price":"Free",
-                    'name':'Junkyard Wars',
-                    "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSdLo2l5RtQheDI3S0_ydfCXk5WsbXOEy0es6vuIFeu57snD5A/viewform?usp=sf_link")),
-                    "slogan":"Because Junk isn't just Junk",
-                    'shortDescription':'Its time to showcase your engineering knowledge.You have to think reverse and assemble the machine in a limited time-frame.',
-                    "details":[
-                        {
-                            "name":"Format",
-                            "value":<div>
-                                The event consist of two Round.
-                                <h4>Round 1 / Elimination Round :</h4><br/>
-                                <ol>
-                                    <li>Consist 40 questions based on computer hardware.</li>
-                                    <li>Questions are mixed of subjective and objective.</li>
-                                    <li>Each team is provided with a Question sheet and Answer sheet.</li>
-                                    <li>Time limit 20 minutes.</li>
-                                    <li>For each wrong answer 1 point is deducted and 3 points will be rewarded to right answer.</li>
-                                </ol>
-                                <h4>Round 2 / Final Round :</h4>
-                                <ol>
-                                    <li>Those shortlisted from Elimination Round will take part in this Final Round.</li>
-                                    <li>The finalist would have to assemble the machine along with that they have to set up the network using the given materials.</li>
-                                    <li>On completion of machine 15 points will be rewarded.</li>
-                                    <li>Final points awarded is based on the points scored in the game.</li>
-                                    <li>Time limit 25 minutes.</li>
-                                    <li>Team with highest point win the JUNKYARD WARS.</li>
-                                    
-                                </ol>
-                            </div>
-                        
-                    },
-                    {
-                        "name":"Rules",
-                        "value":
-                            <ol>
-                                <li>Participants should carry their valid ID card of their respective college.</li>
-                                <li>To participate in this event he must register for event by paying Rs 50 per candidate fees.</li>
-                                <li>Each team must have 2 members .</li>
-                                <li>For Final Round teams have to be appear for Elimination Round.</li>
-                                <li>The organisers reserve all rights to disqualify any team for usage of unfair means.</li>
-                                <li>Teams have to complete each round in a given time limit , using only the materials provided.</li>
-                            </ol>
-                        
-                    },
-                    {
-                        "name":"Contact",
-                        "value":<ul>
-                            <li>
-                            Ujjwal Pratap Singh <PhoneIcon/> +91 95604 30897
-                            </li>
-                            <li>
-                            Nitin Mahour <PhoneIcon/>+91 84481 43797
-                            </li>
-                        </ul>
-                    }
-
-                ],
-                    "venue":"Room Number 9",
-                    'schedule':"2019-02-27T10:00:00",
-
-                    'open':false
-                },
                 {//TREASURE HUNT
                     "name":"Chasse au Tresor",
                     "price":"₹50/Team",
                     "poster":treasureHuntPoster,
+                    'banner':treasureHuntBanner,
                     "link":()=>(window.open("https://docs.google.com/forms/d/e/1FAIpQLSekGq3c1vnnYzwhpX8Yb0Fwy99Xq4gOruxCafuTMRu4IpQxZQ/viewform?usp=sf_link")),
                     "slogan":"Embrace the unknown, because it is there you will find your treasure",
                     "shortDescription":<p>
@@ -364,6 +378,7 @@ Same as the previous round teams again will face an elimination round. In this r
                 {//UNICON
                     "name":"Unicon",
                     "poster":uniconPoster,
+                    'banner':uniconBanner,
                     "price":"Paid",
                     "link":"",
                     "slogan":"Unleash your gaming instinct",
@@ -383,7 +398,7 @@ Same as the previous round teams again will face an elimination round. In this r
                         {
                             "name":"PUBG Mobile",
                             "value":<div>
-                                 *Please note that There is also a registration fee of 100 INR for a DUO and 250 INR for a SQUAD.
+                                 *Please note that There is also a registration fee of 100 INR for a DUO and 200 INR for a SQUAD.
 
                                 <ul>
                                     <li>You are free to play with squads, duo or solo.</li>
@@ -398,8 +413,10 @@ Same as the previous round teams again will face an elimination round. In this r
                             </div>
                         },
                         {
-                            "name":"Tekken 3",
+                            "name":"Tekken 7",
                             "value":<div>
+                                *Please note that There is also a registration fee of ₹50/Player.
+
                                 Game Settings
 
                                 <ul>
@@ -424,6 +441,8 @@ Same as the previous round teams again will face an elimination round. In this r
                         {
                             "name":"FIFA 18",
                             "value":<div>
+                                *Please note that There is also a registration fee of ₹50/Player.
+
                                 <b>Rules</b>
                                 <ol>
 
@@ -557,7 +576,9 @@ Same as the previous round teams again will face an elimination round. In this r
 						<Grid container spacing={16} justify="center">
 						{this.state.events.map((event,index)=>(
 							<Grid item style={{margin:"20px",maxWidth:"400px"}}>
-							<Card evevation={8} style={{position:"relative"}} >
+							<Card evevation={8} style={{position:"relative"}} 
+                                raised={event.hovering}
+                            >
 								<CardActionArea onClick={()=>{
                                         event.open=true;
                                         this.state.events[index]=event;
@@ -585,7 +606,7 @@ Same as the previous round teams again will face an elimination round. In this r
 
                                     >
                                     <Blur radius={event.hovering?"5px":"0px"} transition="400ms">
-									<CardMedia image={event.poster} height="150" style={{width:"100%",objectFit:"none"}} title = {event.name} component="img"/>
+									<CardMedia image={event.banner} height="150" style={{objectFit:"scale-down",height:"100%"}} title = {event.name} component="img"/>
 
 									<CardContent>
 										<Typography
@@ -594,20 +615,20 @@ Same as the previous round teams again will face an elimination round. In this r
 										>
 											{event.name}
 										</Typography>
-										<Typography variant="p">
+										<Typography variant="p" style={{textOverflow: "ellipsis",height:"100px"}}>
 											{event.shortDescription}
 										</Typography>
 									</CardContent>
                                     </Blur>
-                                    <Slide direction="down" in={event.hovering} timeout={400}>
-                                    <Grid container justify="center" alignItems="center" style={{backgroundColor:"#0008",position:"absolute",left:0,top:0,width:"100%",height:"100%"}}>
+                                    <Zoom  in={event.hovering} timeout={400}>
+                                    <Grid container justify="center" alignItems="center" style={{backgroundColor:"#0000",position:"absolute",left:0,top:0,width:"100%",height:"100%"}}>
                                         <Grid item>
-                                            <Button variant="raised">
+                                            <Button variant="raised" color="primary">
                                                 Learn More
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                    </Slide>
+                                    </Zoom>
 								</CardActionArea>
 								<CardActions>
 									<Button color="primary" onClick={()=>{
@@ -672,7 +693,7 @@ Same as the previous round teams again will face an elimination round. In this r
                                             <Grid item>
                                             <Paper style={{margin:"10px"}}>
                                                 <CardContent>
-                                                    <img style={{display:"block",maxWidth:"100%"}} src={event.poster}/>
+                                                    <img style={{display:"block",width:"100%",maxWidth:"800px"}} src={event.poster}/>
                                                 </CardContent>
                                             </Paper>
                                             </Grid>
@@ -704,34 +725,7 @@ Same as the previous round teams again will face an elimination round. In this r
                                                             }}>
                                                                 Register
                                                             </Button>
-                                                            <Dialog
-                                                                open={event.openPopup}
-                                                                anchorEl={null}
-                                                                onBackdropClick={()=>{
-                                                                    event.openPopup=false;
-                                                                    this.setState(
-                                                                        {
-
-                                                                        }
-                                                                    )
-                                                                }}
-                                                            >
-                                                                <DialogTitle>
-
-                                                                <Typography
-                                                                    variant="title"
-                                                                    style={{padding:"10px"}}
-                                                                >
-                                                                    Register in
-                                                                </Typography>
-                                                                </DialogTitle>
-                                                                <DialogContent>
-                                                                <Divider/>
-                                                                <div>
-                                                                    {event.popup}
-                                                                </div>
-                                                                </DialogContent>
-                                                            </Dialog>
+                                                            
                                                             </Grid>
 
                                                         </Grid>
@@ -750,7 +744,7 @@ Same as the previous round teams again will face an elimination round. In this r
 
                                                             </Typography>
                                                             <Typography variant="subheading" align="left">
-                                                               <BalanceIcon/> Price : {event.price}
+                                                               <BalanceIcon/> Entry : {event.price}
 
                                                             </Typography>
                                                         </Grid>
@@ -785,6 +779,35 @@ Same as the previous round teams again will face an elimination round. In this r
                                                     
                                         </Grid>
                                         
+                                    </Dialog>
+                                    <Dialog
+                                        open={event.openPopup}
+                                        anchorEl={null}
+                                        fullWidth
+                                        onBackdropClick={()=>{
+                                            event.openPopup=false;
+                                            this.setState(
+                                                {
+
+                                                }
+                                            )
+                                        }}
+                                    >
+                                        <DialogTitle>
+
+                                        <Typography
+                                            variant="title"
+                                            style={{padding:"10px"}}
+                                        >
+                                            Register in
+                                        </Typography>
+                                        </DialogTitle>
+                                        <DialogContent>
+                                        <Divider/>
+                                        <div>
+                                            {event.popup}
+                                        </div>
+                                        </DialogContent>
                                     </Dialog>
 									<Button color="secondary" onClick={()=>{
                                                                 if(event.popup){
